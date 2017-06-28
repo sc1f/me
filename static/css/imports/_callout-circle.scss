@@ -1,0 +1,18 @@
+div.callout-circle__container {
+  &.callout-circle__container--homepage {
+    height: 100vh;
+    padding-top: 6em;
+  }
+}
+div.callout-circle {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  background: $text-color;
+  color: #fff;
+
+  &.callout-circle__homepage {
+    height: 30em;
+    width: 30em;
+  }
+}

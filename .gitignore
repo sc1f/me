@@ -1,0 +1,12 @@
+.DS_Store
+bin
+include
+lib
+pyvenv.cfg
+pip-selfcheck.json
+.idea
+juntan/site_secrets.py
+static/css/main.css
+static/css/main.css.map
+static/assets
+__pycache__
