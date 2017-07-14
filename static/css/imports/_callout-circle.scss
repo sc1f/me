@@ -1,6 +1,5 @@
 div.callout-circle__container {
   &.callout-circle__container--homepage {
-    height: 100vh;
     padding-top: 6em;
   }
 }
@@ -14,5 +13,31 @@ div.callout-circle {
   &.callout-circle__homepage {
     height: 30em;
     width: 30em;
+    padding: 4.5em;
+  }
+
+  &.callout-circle__about {
+    height: 22.5em;
+    width: 22.5em;
+    padding: 6em;
+  }
+}
+
+.callout-circle__text {
+  color: #fff;
+  font-weight: bold;
+
+  &.callout-circle__text--small {
+    font-size: 1.1rem;
+    font-style: italic;
+    font-weight: normal;
+  }
+}
+
+a.callout-circle__text {
+  font-size: 1.75em;
+
+  i {
+    margin-right: 1em;
   }
 }

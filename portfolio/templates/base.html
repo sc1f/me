@@ -7,7 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{% block title %}{% endblock %}</title>
     {% load sass_tags %}
-    {% load static %}
+    {% load staticfiles %}
+    <link rel="stylesheet" href="{% static 'css/texta-alt.css' %}" media="none" onload="this.media='all'">
+    <link rel="stylesheet" href="{% static 'css/foundation-icons/foundation-icons.css' %}" media="none" onload="this.media='all'">
     <link rel="stylesheet" href="{% sass_src 'css/custom_foundation.scss' %}">
     <link rel="stylesheet" href="{% sass_src 'css/main.scss' %}">
 </head>
@@ -28,6 +30,9 @@
     </nav>
     {% block content %}
     {% endblock %}
+</div>
+<div class="footer flex-container align-center-middle">
+    <p class="footer-text">Made with <i class="fi-heart"></i> in Austin, TX</p>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.0/js/foundation.min.js"></script>
 </body>

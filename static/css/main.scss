@@ -7,41 +7,6 @@ $theme-magenta: #FF00FF;
 $theme-yellow: #FFFF00;
 $text-color: #303030;
 
-// typography
-
-@font-face {
-  font-family: 'Texta Alt';
-  src: url('/static/assets/fonts/texta_alt_light-webfont.woff2') format('woff2'),
-  url('/static/assets/fonts/texta_alt_light-webfont.woff') format('woff');
-  font-weight: 300;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Texta Alt';
-  src: url('/static/assets/fonts/texta_alt_book-webfont.woff2') format('woff2'),
-  url('/static/assets/fonts/texta_alt_book-webfont.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-
-@font-face {
-  font-family: 'Texta Alt';
-  src: url('/static/assets/fonts/texta_alt_bold-webfont.woff2') format('woff2'),
-  url('/static/assets/fonts/texta_alt_bold-webfont.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Texta Alt';
-  src: url('/static/assets/fonts/texta_alt_black-webfont.woff2') format('woff2'),
-  url('/static/assets/fonts/texta_alt_black-webfont.woff') format('woff');
-  font-weight: 900;
-  font-style: normal;
-}
-
 
 // mixins
 
@@ -57,6 +22,34 @@ $text-color: #303030;
     box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
   } @else if $level == 5 {
     box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
+  }
+
+}
+
+@mixin fake-underline($color: #666, $top: 84%, $bottom: 90%) {
+  background-image: linear-gradient(
+                  180deg, rgba(0,0,0,0),
+                  rgba(0,0,0,0) $top,
+                  $color $top + 0.1%,
+                  $color $bottom,
+                  rgba(0,0,0,0) $bottom + 0.1%,
+                  rgba(0,0,0,0)
+  );
+  text-decoration: none;
+}
+
+@mixin media-query($lvl) {
+
+  $breakpoints: (
+          small: 0px,
+          medium: 640px,
+          large: 1024px,
+          xlarge: 1200px,
+          xxlarge: 1440px,
+  );
+
+  @media screen and (max-width: map-get($breakpoints, $lvl)) {
+    @content;
   }
 
 }

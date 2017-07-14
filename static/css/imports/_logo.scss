@@ -1,10 +1,13 @@
 .logo__container {
-  height: 100vh;
   padding-top: 35%;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+
+  .logo__container--animated {
+    justify-content: flex-start !important;
+  }
 }
 
 span.logo__item {
@@ -22,31 +25,27 @@ span.logo__item {
 #logo__item--1 {
   color: $theme-cyan;
   opacity: .6;
-  top: 4px;
+  top: 5px;
   z-index: 3;
 }
 
 #logo__item--2 {
   animation-name: animate-logo__item--2;
+  animation-fill-mode: forwards;
   animation-duration: 1s;
   color: $theme-magenta;
   opacity: .5;
-  top: 2px;
+  top: 3px;
   z-index: 2;
-  -ms-transform: rotate(15deg); /* IE 9 */
-  -webkit-transform: rotate(15deg); /* Chrome, Safari, Opera */
-  transform: rotate(15deg);
 }
 
 #logo__item--3  {
   animation-name: animate-logo__item--3;
+  animation-fill-mode: forwards;
   animation-duration: 1.5s;
   color: $theme-yellow;
   opacity: .8;
   z-index: 1;
-  -ms-transform: rotate(30deg); /* IE 9 */
-  -webkit-transform: rotate(30deg); /* Chrome, Safari, Opera */
-  transform: rotate(30deg);
 }
 
 @keyframes animate-logo__item--2 {
