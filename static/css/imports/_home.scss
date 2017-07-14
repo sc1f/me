@@ -37,6 +37,10 @@
   &.homepage-header__button-resume {
     margin-right: 1em;
   }
+
+  &:hover {
+    background: $theme-cyan;
+  }
 }
 
 .homepage-item__container {
@@ -75,9 +79,9 @@
 .row__about {
   background: $theme-blue;
   max-width: 100%;
-
-  div.columns.homepage-about__container, div.columns.homepage-contact__container {
-    padding: 1rem 1.875rem 0 1.875rem;
+  div.columns.homepage-about__container {
+    padding-top: 1rem;
+    max-width: 75rem;
   }
 }
 
@@ -85,8 +89,24 @@ div.homepage-avatar__container {
   padding-left: 0;
 }
 
+img.homepage-avatar {
+  height: auto;
+  width: 100%;
+}
+
 
 #homepage-resume {
+  font-weight: bold;
+  font-size: 1.25rem;
+}
+
+
+.homepage-resume__container {
+  margin-bottom: 2em;
+  width: auto;
+}
+
+.homepage-contact__link {
   font-weight: bold;
   font-size: 1.25rem;
 }

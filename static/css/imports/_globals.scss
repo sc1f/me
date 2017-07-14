@@ -1,18 +1,26 @@
 // global background for the body
 
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   background: $theme-gray;
 }
 
 a {
   font-weight: bold;
+
+  &:hover {
+    @include fake-underline($text-color);
+  }
 }
 
 
 .footer {
   padding: 2em;
   .footer-text {
-    font-size: 1.25rem;
+    font-size: 1rem;
     font-weight: bold;
   }
 }
