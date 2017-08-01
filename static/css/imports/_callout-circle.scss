@@ -1,6 +1,10 @@
 div.callout-circle__container {
   &.callout-circle__container--homepage {
     padding-top: 6em;
+
+    @include media-query(medium) {
+      padding: 8em 0 0 0;
+    }
   }
 }
 div.callout-circle {
@@ -14,6 +18,13 @@ div.callout-circle {
     height: 30em;
     width: 30em;
     padding: 4.5em;
+
+    @include media-query(medium) {
+      height: auto;
+      min-height: 300px;
+      width: auto;
+      min-width: 300px;
+    }
   }
 
   &.callout-circle__about {

@@ -24,3 +24,9 @@ a {
     font-weight: bold;
   }
 }
+
+div.columns {
+  @include media-query(medium) {
+    padding: 0 2em;
+  }
+}

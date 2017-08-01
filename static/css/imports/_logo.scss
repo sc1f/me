@@ -5,8 +5,18 @@
   -ms-user-select: none;
   user-select: none;
 
+  @include media-query(medium) {
+    padding-top: 0;
+  }
+
   .logo__container--animated {
     justify-content: flex-start !important;
+
+    @include media-query(medium) {
+      justify-content: center !important;
+      position: absolute;
+      top: -10em;
+    }
   }
 }
 
@@ -65,4 +75,8 @@ span.logo__item {
   letter-spacing: 60px;
   text-align: right;
   z-index: 4;
+
+  @include media-query(medium) {
+    display: none;
+  }
 }

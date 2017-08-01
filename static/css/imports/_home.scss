@@ -3,6 +3,10 @@
 
   &.row__introduction {
     margin-bottom: 6em;
+
+    @include media-query(medium) {
+      margin-bottom: 2em;
+    }
   }
 
   &.row__about {
@@ -55,13 +59,20 @@
     margin-right: 0;
   }
 
+  @include media-query(medium) {
+    width: 100%;
+  }
+
   .homepage-item__thumbnail {
     background-image: url(http://via.placeholder.com/300x300);
     -webkit-background-size: cover;
     background-size: cover;
     background-position: center center;
-    height: 325px;
-    width: 325px;
+    min-height: 325px;
+    min-width: 325px;
+
+    @include media-query(medium) {
+    }
   }
 
   .homepage-item__title {
@@ -92,6 +103,13 @@ div.homepage-avatar__container {
 img.homepage-avatar {
   height: auto;
   width: 100%;
+}
+
+.homepage-copy {
+  font-size: 1.2rem;
+  &.homepage-copy__bio {
+    width: 75%;
+  }
 }
 
 

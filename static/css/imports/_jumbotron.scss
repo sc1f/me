@@ -3,6 +3,12 @@ div.row.jumbotron {
   width: 100%;
 
   @include media-query(medium) {
-    padding-bottom: 2em;
+    padding-bottom: 30em;
+  }
+}
+
+div.jumbotron-content__container {
+  @include media-query(medium) {
+    flex-direction: column;
   }
 }

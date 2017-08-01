@@ -10,3 +10,7 @@ static/css/main.css
 static/css/main.css.map
 static/assets
 __pycache__
+juntan/juntan.iml
+portfolio/portfolio.iml
+site.iml
+static/static.iml
