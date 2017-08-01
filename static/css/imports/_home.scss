@@ -1,130 +1,111 @@
-.row__homepage {
-  margin-bottom: 4em;
+// rows form the crux of the layout - these override default row styles
+.row {
+  padding-top: 3.75%;
+}
+.row__navigation {
+  padding-bottom: 7.5%;
+}
 
-  &.row__introduction {
-    margin-bottom: 6em;
+.row__skill {
+  border-bottom: 4px solid #000;
+  padding-bottom: 3.75%;
+}
 
-    @include media-query(medium) {
-      margin-bottom: 2em;
+.container__description {
+  background: #000;
+  padding-bottom: 3.75%; // fill in for missing row padding-top
+
+  .row__description {
+    color: #fff;
+  }
+}
+
+// containers
+.container--align-left {
+  align-items: flex-start;
+
+  &.container--text {
+    * {
+      font-weight: $font-weight-bold;
     }
   }
 
-  &.row__about {
-    margin-bottom: 0;
-  }
-
 }
 
-.homepage-header {
-  font-weight: bold;
-  margin-bottom: 0;
-}
+.container--align-right {
+  align-items: flex-end;
+  text-align: right;
 
-.homepage-header__container {
-  width: 100%;
-  .homepage-header {
-    margin-right: 1rem;
-  }
-
-  .homepage-header__link {
-    align-self: flex-end;
-  }
-}
-
-.homepage-header__button {
-  border-radius: 50%;
-  display: flex !important;
-  height: 2.5em;
-  width: 2.5em;
-  margin: 0;
-
-  &.homepage-header__button-resume {
-    margin-right: 1em;
-  }
-
-  &:hover {
-    background: $theme-cyan;
-  }
-}
-
-.homepage-item__container {
-  flex-wrap: wrap;
-}
-
-.homepage-item {
-  margin-top: 1em;
-  width: auto; //30% if we don't have square images
-
-  &:last-of-type {
-    margin-right: 0;
-  }
-
-  @include media-query(medium) {
-    width: 100%;
-  }
-
-  .homepage-item__thumbnail {
-    background-image: url(http://via.placeholder.com/300x300);
-    -webkit-background-size: cover;
-    background-size: cover;
-    background-position: center center;
-    min-height: 325px;
-    min-width: 325px;
-
-    @include media-query(medium) {
+  &.container--text {
+    * {
+      font-weight: $font-weight-normal;
     }
   }
+}
 
-  .homepage-item__title {
-    margin-top: .5rem;
-    font-weight: bold;
+.container__list {
+  margin-top: auto;
+}
+
+.container--work__buttons {
+  margin-left: auto;
+  width: 60%;
+  a.button {
+    margin-left: 1.5rem;
   }
 
-  .homepage-item__date {
-    font-size: .9rem;
-  }
-}
-
-// homepage about
-
-.row__about {
-  background: $theme-blue;
-  max-width: 100%;
-  div.columns.homepage-about__container {
-    padding-top: 1rem;
-    max-width: 75rem;
-  }
-}
-
-div.homepage-avatar__container {
-  padding-left: 0;
-}
-
-img.homepage-avatar {
-  height: auto;
-  width: 100%;
-}
-
-.homepage-copy {
-  font-size: 1.2rem;
-  &.homepage-copy__bio {
+  &.container--contact__buttons {
     width: 75%;
   }
 }
 
 
-#homepage-resume {
-  font-weight: bold;
-  font-size: 1.25rem;
+
+.container--portfolio {
+  flex-wrap: wrap;
+  padding-top: 3.5%;
+
+  .container--item {
+    background-color: $theme-gray;
+    flex: .3 auto;
+    height: 15em;
+    padding: 0;
+    width: 33%;
+
+    &:hover {
+      background: $theme-yellow;
+    }
+
+    @include media-query(large) {
+      flex: .5 auto;
+      width: 50%;
+    }
+
+    @include media-query(medium) {
+      flex: 1 auto;
+      width: 100%;
+    }
+  }
 }
 
-
-.homepage-resume__container {
-  margin-bottom: 2em;
-  width: auto;
+// typography
+.heading {
+  &.heading--name {
+    margin-bottom: 2em;
+  }
 }
 
-.homepage-contact__link {
-  font-weight: bold;
-  font-size: 1.25rem;
+.body {
+  &.body--large {
+    font-size: 1.5rem;
+  }
+}
+
+// special styles
+.portrait {
+  background: url("/static/assets/portrait.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  background-size: cover;
+  height: 15em;
+  width: 15em;
 }

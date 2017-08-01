@@ -4,8 +4,14 @@ $theme-gray: #E6E6E4;
 $theme-blue: #D4E3E0;
 $theme-cyan: #00FFFF;
 $theme-magenta: #FF00FF;
-$theme-yellow: #FFFF00;
+$theme-yellow: #FFEC00;
 $text-color: #303030;
+$link-color: #4A90E2;
+
+// font weights
+
+$font-weight-normal: 300;
+$font-weight-bold: 500;
 
 // mixins
 
@@ -55,11 +61,5 @@ $text-color: #303030;
 
 // import your files here
 @import 'imports/globals';
-@import 'imports/navigation';
-@import 'imports/logo';
-@import 'imports/jumbotron';
-@import 'imports/_callout-circle';
+@import 'imports/buttons';
 @import 'imports/home';
-@import 'imports/footer';
-@import 'imports/category';
-@import 'imports/post';

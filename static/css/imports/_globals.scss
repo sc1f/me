@@ -1,27 +1,56 @@
-// global background for the body
+// Styles applied across the site
 
 html, body {
   overflow-x: hidden;
 }
 
 body {
-  background: $theme-gray;
+  background: #fff;
+  padding-top: 3.75%;
 }
 
+h3 {
+  font-weight: $font-weight-bold;
+}
 a {
-  font-weight: bold;
+  color: $link-color;
+  text-decoration: underline;
 
   &:hover {
-    @include fake-underline($text-color);
+    color: $theme-yellow;
   }
 }
 
+// edit ul/ol line height
+ul, ol {
+  line-height: 2.5;
+}
+
+// highlighted elements
+.highlighted {
+  background-color: $theme-yellow;
+  color: #000;
+  padding: .25rem;
+  width: 100%;
+}
+
+// edit selection color
+::selection {
+  background: $theme-yellow; /* WebKit/Blink Browsers */
+  color: #000;
+  opacity: 1;
+}
+::-moz-selection {
+  background: $theme-yellow; /* Gecko Browsers */
+  color: #000;
+  opacity: 1;
+}
 
 .footer {
-  padding: 2em;
+  margin-top: 3.75%;
+  padding: 3.75% 2em;
   .footer-text {
     font-size: 1rem;
-    font-weight: bold;
   }
 }
 

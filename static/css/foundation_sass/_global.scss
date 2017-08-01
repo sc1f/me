@@ -76,11 +76,11 @@ $global-padding: 1rem !default;
 
 /// Global font weight used for normal type.
 /// @type Keyword | Number
-$global-weight-normal: normal !default;
+$global-weight-normal: 300 !default; // FIXME
 
 /// Global font weight used for bold type.
 /// @type Keyword | Number
-$global-weight-bold: bold !default;
+$global-weight-bold: 500 !default; // FIXME
 
 /// Global value used for all elements that have a border radius.
 /// @type Number

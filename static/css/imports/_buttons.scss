@@ -1,0 +1,29 @@
+.button {
+  background: #fff;
+  border: 4px solid #000;
+  color: #000;
+  font-size: 1.5rem;
+  font-weight: $font-weight-bold;
+  text-decoration: none;
+  text-transform: lowercase;
+  width: 75%;
+  
+  &:hover {
+    background: #000;
+  }
+
+  &.button__primary {
+    background-color: $theme-yellow;
+
+    &:hover {
+      background: #000;
+      color: $theme-yellow;
+    }
+  }
+
+  &.button--large {
+    font-size: 2rem;
+  }
+
+}
+
