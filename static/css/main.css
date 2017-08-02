@@ -5,6 +5,9 @@ body {
   background: #fff;
   padding-top: 3.75%; }
 
+.row {
+  padding-top: 3.75%; }
+
 @media screen and (max-width: 640px) {
   .row__about {
     flex-direction: column-reverse; } }
@@ -14,9 +17,6 @@ body {
     flex-direction: column; }
     .row__archive .columns.large-12 {
       margin-bottom: 1em; } }
-
-.row {
-  padding-top: 3.75%; }
 
 .container--align-left {
   align-items: flex-start; }
