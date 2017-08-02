@@ -226,7 +226,7 @@ ul, ol {
     .post--meta {
       width: 100%; } }
 
-.post--container > img {
+.post--container > * > img {
   height: auto !important;
 }
 /*# sourceMappingURL=../../../../../../../static/css/main.css.map */
