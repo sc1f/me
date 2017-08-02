@@ -205,9 +205,6 @@ ul, ol {
     flex-direction: column; } }
 
 .portrait {
-  background: url("../assets/portrait.jpg") no-repeat center center;
-  -webkit-background-size: cover;
-  background-size: cover;
   height: 15em;
   width: 15em; }
   @media screen and (max-width: 640px) {

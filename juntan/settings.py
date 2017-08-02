@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     'sass_processor',
     'portfolio.apps.PortfolioConfig',
     'ckeditor',
-    'ckeditor_uploader'
+    'ckeditor_uploader',
+    'django_s3_storage'
 ]
 
 MIDDLEWARE = [
@@ -126,3 +127,6 @@ SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR, 'static')  # Somehow this works - l
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_IMAGE_BACKEND = 'pillow'
+
+DEFAULT_FILE_STORAGE = 'django_s3_storage.storage.S3Storage'
+# AWS
