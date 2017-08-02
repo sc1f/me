@@ -21,8 +21,6 @@ class UserMeta(models.Model):
 
 class Category(models.Model):
     name = models.CharField(max_length=300, unique=True)
-    description = models.TextField()
-    meta = models.TextField()
 
     class Meta:
         verbose_name_plural = "categories"

@@ -8,8 +8,11 @@
     <title>{% block title %}{% endblock %}</title>
     {% load sass_tags %}
     {% load staticfiles %}
-    <link rel="stylesheet" href="{% static 'css/custom_foundation.css' %}">
-    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% sass_src 'css/custom_foundation.scss' %}">
+    <link rel="stylesheet" href="{% sass_src 'css/main.scss' %}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{% static 'favicon-32x32.png' %}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{% static 'favicon-96x96.png' %}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{% static 'favicon-16x16.png' %}">
     {% block meta %}
     {% endblock %}
 </head>
@@ -27,6 +30,5 @@
 <div class="footer flex-container align-center-middle">
     <p class="footer-text">jun tan, 2017</p>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.0/js/foundation.min.js"></script>
 </body>
 </html>
