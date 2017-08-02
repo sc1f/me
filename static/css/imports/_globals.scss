@@ -10,6 +10,12 @@ body {
 }
 
 // block-level elements
+
+// rows form the crux of the layout - these override default row styles
+.row {
+  padding-top: 3.75%;
+}
+
 .row__about {
   @include media-query(medium) {
     flex-direction: column-reverse;
@@ -24,11 +30,6 @@ body {
       margin-bottom: 1em;
     }
   }
-}
-
-// rows form the crux of the layout - these override default row styles
-.row {
-  padding-top: 3.75%;
 }
 
 // containers
