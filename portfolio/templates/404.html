@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}404 | jun tan{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row flex-container align-spaced">
+            <!-- Header -->
+            <div class="columns large-6 medium-6 small-12 flex-container align-start flex-dir-column container container--text container--align-left">
+                <h1 class="heading heading--name">404</h1>
+                <p class="body body--large">we couldn't find what you were looking for.</p>
+            </div>
+            <div class="columns large-6 medium-6 small-12 flex-container align-middle flex-dir-column container container--text">
+                <a href="/" class="button button--large">home</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
