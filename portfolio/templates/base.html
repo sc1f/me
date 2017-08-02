@@ -10,6 +10,8 @@
     {% load staticfiles %}
     <link rel="stylesheet" href="{% sass_src 'css/custom_foundation.scss' %}">
     <link rel="stylesheet" href="{% sass_src 'css/main.scss' %}">
+    {% block meta %}
+    {% endblock %}
 </head>
 <body>
 {% comment %}{% if not user.is_superuser %}

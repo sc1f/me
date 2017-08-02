@@ -82,12 +82,13 @@
   }
 
   @include media-query(medium) {
+    flex-direction: column;
     margin-top: 1em;
     width: 100% !important;
 
     a.button {
-      margin: 0;
-      width: 30%;
+      margin-bottom:1rem;
+      width: 100%;
     }
   }
 

@@ -1,8 +1,22 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 
-{% block title %}Jun Tan{% endblock %}
-
+{% block title %}jun tan{% endblock %}
+{% block meta %}
+    <!-- fb og -->
+    <meta property="og:url"
+          content="https://juntan.me"/>
+    <meta property="og:title" content="jun tan"/>
+    <meta property="og:description" content="coder, designer, photographer"/>
+    <meta property="og:image"
+          content="{% static 'assets/homepage-meta.png' %}"/>
+    <!-- twitter cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@jtan____">
+    <meta name="twitter:title" content="jun tan">
+    <meta name="twitter:description" content="coder, designer, photographer">
+    <meta name="twitter:image" content="{% static 'assets/homepage-meta.png' %}">
+{% endblock %}
 {% block content %}
     <div class="container">
         <div class="row flex-container align-spaced">
@@ -102,10 +116,10 @@
             <div class="columns large-6 medium-6 small-12 flex-container align-end flex-dir-column container container--text container--align-right">
                 <div class="flex-container flex-dir-column align-self-end align-spaced container container__list">
                     <h3>sketch, illustrator, indesign, photoshop</h3>
-                    <p>building <a href="#">APIs</a>,</p>
-                    <p>dynamic <a href="#">web apps</a>,</p>
-                    <p>wordpress <a href="#">themes</a>,</p>
-                    <p>and <a href="#">chatbots</a></p>
+                    <p>creating <a href="#">user interfaces</a>,</p>
+                    <p>designing <a href="#">experiences</a>,</p>
+                    <p>print <a href="#">layouts</a>,</p>
+                    <p><a href="#">video</a> and motion</p>
                 </div>
             </div>
         </div>
@@ -116,10 +130,10 @@
             <div class="columns large-6 medium-6 small-12 flex-container align-end flex-dir-column container container--text container--align-right">
                 <div class="flex-container flex-dir-column align-self-end align-spaced container container__list">
                     <h3>photojournalism, street, travel</h3>
-                    <p>building <a href="#">APIs</a>,</p>
-                    <p>dynamic <a href="#">web apps</a>,</p>
-                    <p>wordpress <a href="#">themes</a>,</p>
-                    <p>and <a href="#">chatbots</a></p>
+                    <p><a href="#">award-winning</a> photojournalist,</p>
+                    <p>I shoot <a href="#">protests</a>,</p>
+                    <p><a href="#">places</a>,</p>
+                    <p>and <a href="#">streets</a></p>
                 </div>
             </div>
         </div>
@@ -132,7 +146,8 @@
                     <a href="mailto:{{ current_user.email }}" class="button">email</a>
                     <a href="https://github.com/{{ current_user.github }}" target="_blank" rel="noopener noreferrer"
                        class="button">github</a>
-                    <a href="https://instagram.com/{{ current_user.instagram }}" target="_blank" rel="noopener noreferrer"
+                    <a href="https://instagram.com/{{ current_user.instagram }}" target="_blank"
+                       rel="noopener noreferrer"
                        class="button">instagram</a>
                 </div>
             </div>

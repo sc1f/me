@@ -11,16 +11,22 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
-from .site_secrets import *
+try:
+    from .site_secrets import *
+    site_secrets_present = True
+except ImportError:
+    site_secrets_present = False
+
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 ALLOWED_HOSTS = []
 
-SECRET_KEY = secret_key
-DEBUG = debug
-DATABASES = db_config
+if site_secrets_present:
+    SECRET_KEY = secret_key
+    DEBUG = debug
+    DATABASES = db_config
 
 # Application definition
 
