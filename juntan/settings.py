@@ -21,12 +21,11 @@ except ImportError:
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-ALLOWED_HOSTS = []
-
 if site_secrets_present:
     SECRET_KEY = secret_key
     DEBUG = debug
     DATABASES = db_config
+    ALLOWED_HOSTS = allowed_hosts
 
 # Application definition
 
