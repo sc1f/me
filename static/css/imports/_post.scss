@@ -1,0 +1,18 @@
+.row__post {
+  @include media-query(medium){
+    flex-direction: column-reverse;
+    .container--align-right {
+      margin-bottom: 2rem;
+    }
+
+  }
+}
+
+.post--meta {
+  border-bottom: 4px solid #000;
+  margin-bottom: 2rem;
+
+  @include media-query(medium) {
+    width: 100%;
+  }
+}

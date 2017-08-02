@@ -1,7 +1,4 @@
-// rows form the crux of the layout - these override default row styles
-.row {
-  padding-top: 3.75%;
-}
+// homepage specific styles
 .row__navigation {
   padding-bottom: 7.5%;
 }
@@ -17,17 +14,6 @@
   padding-bottom: 3.75%;
 }
 
-// TODO migrate to _post.scss
-.row__post {
-  @include media-query(medium){
-    flex-direction: column-reverse;
-    .container--align-right {
-      margin-bottom: 2rem;
-    }
-
-  }
-}
-
 .container__description {
   background: #000;
   padding-bottom: 3.75%; // fill in for missing row padding-top
@@ -35,37 +21,6 @@
   .row__description {
     color: #fff;
   }
-}
-
-// containers
-.container--align-left {
-  align-items: flex-start;
-
-  @include media-query(medium) {
-
-  }
-
-  &.container--text {
-    * {
-      font-weight: $font-weight-bold;
-    }
-  }
-
-}
-
-.container--align-right {
-  align-items: flex-end;
-  text-align: right;
-
-  &.container--text {
-    * {
-      font-weight: $font-weight-normal;
-    }
-  }
-}
-
-.container__list {
-  margin-top: auto;
 }
 
 .container--work__buttons {
@@ -160,14 +115,5 @@
 
   &.portrait__about {
     margin-bottom: 2rem;
-  }
-}
-
-.post--meta {
-  border-bottom: 4px solid #000;
-  margin-bottom: 2rem;
-
-  @include media-query(medium) {
-    width: 100%;
   }
 }

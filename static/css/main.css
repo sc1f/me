@@ -5,6 +5,33 @@ body {
   background: #fff;
   padding-top: 3.75%; }
 
+@media screen and (max-width: 640px) {
+  .row__about {
+    flex-direction: column-reverse; } }
+
+@media screen and (max-width: 640px) {
+  .row__archive {
+    flex-direction: column; }
+    .row__archive .columns.large-12 {
+      margin-bottom: 1em; } }
+
+.row {
+  padding-top: 3.75%; }
+
+.container--align-left {
+  align-items: flex-start; }
+  .container--align-left.container--text * {
+    font-weight: 500; }
+
+.container--align-right {
+  align-items: flex-end;
+  text-align: right; }
+  .container--align-right.container--text * {
+    font-weight: 400; }
+
+.container__list {
+  margin-top: auto; }
+
 h3 {
   font-weight: 500; }
 
@@ -103,9 +130,6 @@ ul, ol {
       .button.button--large {
         font-size: 1.5rem; } }
 
-.row {
-  padding-top: 3.75%; }
-
 .row__navigation {
   padding-bottom: 7.5%; }
 
@@ -117,31 +141,11 @@ ul, ol {
   border-bottom: 4px solid #000;
   padding-bottom: 3.75%; }
 
-@media screen and (max-width: 640px) {
-  .row__post {
-    flex-direction: column-reverse; }
-    .row__post .container--align-right {
-      margin-bottom: 2rem; } }
-
 .container__description {
   background: #000;
   padding-bottom: 3.75%; }
   .container__description .row__description {
     color: #fff; }
-
-.container--align-left {
-  align-items: flex-start; }
-  .container--align-left.container--text * {
-    font-weight: 500; }
-
-.container--align-right {
-  align-items: flex-end;
-  text-align: right; }
-  .container--align-right.container--text * {
-    font-weight: 400; }
-
-.container__list {
-  margin-top: auto; }
 
 .container--work__buttons {
   justify-content: flex-end;
@@ -212,17 +216,17 @@ ul, ol {
   .portrait.portrait__about {
     margin-bottom: 2rem; }
 
+@media screen and (max-width: 640px) {
+  .row__post {
+    flex-direction: column-reverse; }
+    .row__post .container--align-right {
+      margin-bottom: 2rem; } }
+
 .post--meta {
   border-bottom: 4px solid #000;
   margin-bottom: 2rem; }
   @media screen and (max-width: 640px) {
     .post--meta {
       width: 100%; } }
-
-.editor {
-  position: fixed;
-  bottom: 7%;
-  right: 1%;
-  width: 15%; }
 
 /*# sourceMappingURL=../../../../../../../static/css/main.css.map */

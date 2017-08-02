@@ -10,9 +10,7 @@
             <!-- Header -->
             <div class="columns large-6 medium-6 small-12 flex-container align-start flex-dir-column container container--text container--align-left">
                 <h1 class="heading heading--name">jun tan</h1>
-                <div class="flex-container flex-dir-column align-self-end align-spaced container container__list">
-                    <p class="body body--large">{{ current_user.about | linebreaksbr }}</p>
-                </div>
+                <p class="body body--large">{{ current_user.about | linebreaksbr }}</p>
             </div>
             <div class="columns large-6 medium-6 small-12 flex-container align-middle flex-dir-column container container--text">
                 <img src="/static/assets/portrait.jpg" alt="{{ current_user.name }}" class="portrait portrait__about">

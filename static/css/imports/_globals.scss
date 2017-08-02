@@ -9,6 +9,59 @@ body {
   padding-top: 3.75%;
 }
 
+// block-level elements
+.row__about {
+  @include media-query(medium) {
+    flex-direction: column-reverse;
+  }
+}
+
+.row__archive {
+  @include media-query(medium) {
+    flex-direction: column;
+
+    .columns.large-12 {
+      margin-bottom: 1em;
+    }
+  }
+}
+
+// rows form the crux of the layout - these override default row styles
+.row {
+  padding-top: 3.75%;
+}
+
+// containers
+.container--align-left {
+  align-items: flex-start;
+
+  @include media-query(medium) {
+
+  }
+
+  &.container--text {
+    * {
+      font-weight: $font-weight-bold;
+    }
+  }
+
+}
+
+.container--align-right {
+  align-items: flex-end;
+  text-align: right;
+
+  &.container--text {
+    * {
+      font-weight: $font-weight-normal;
+    }
+  }
+}
+
+.container__list {
+  margin-top: auto;
+}
+
 // typography
 h3 {
   font-weight: $font-weight-bold;
