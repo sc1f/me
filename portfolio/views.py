@@ -21,7 +21,7 @@ def handler500(request):
 def homepage(request):
     ctx = {
         "current_user": UserMeta.objects.get(id=1),
-        "items": Post.objects.all()
+        "items": Post.objects.all().order_by('-date', 'title')
     }
     return render(request, 'index.html', context=ctx)
 
@@ -35,9 +35,9 @@ def about(request):
 def archive(request):
     ctx = {
         "count": len(Post.objects.all()),
-        "code": Post.objects.filter(category__name="Code").all(),
-        "design": Post.objects.filter(category__name="Design").all(),
-        "photo": Post.objects.filter(category__name="Photo").all()
+        "code": Post.objects.filter(category__name="Code").all().order_by('-date', 'title'),
+        "design": Post.objects.filter(category__name="Design").all().order_by('-date', 'title'),
+        "photo": Post.objects.filter(category__name="Photo").all().order_by('-date', 'title')
     }
 
     return render(request, 'archive.html', context=ctx)

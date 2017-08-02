@@ -7,4 +7,4 @@ admin.site.register(Category)
 
 @admin.register(Post)
 class PostAdmin( admin.ModelAdmin):
-    list_display = ('title', 'category', 'date_created')
+    list_display = ('title', 'category', 'date')
