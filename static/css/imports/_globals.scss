@@ -9,6 +9,7 @@ body {
   padding-top: 3.75%;
 }
 
+// typography
 h3 {
   font-weight: $font-weight-bold;
 }
@@ -24,6 +25,39 @@ a {
 // edit ul/ol line height
 ul, ol {
   line-height: 2.5;
+}
+
+.heading {
+  font-weight: $font-weight-bold;
+
+  &.heading--name {
+    margin-bottom: 2em;
+
+    @include media-query(medium) {
+      font-size: 2.5em;
+      margin-bottom: 1em;
+    }
+  }
+
+  &.heading--homepage {
+    @include media-query(medium) {
+      font-size: 2.5em;
+    }
+  }
+}
+
+.body {
+  font-weight: $font-weight-normal !important;
+  &.body--large {
+    font-size: 1.5rem;
+  }
+  &.body--xlarge {
+    font-size: 2rem;
+  }
+
+  &.body__italic {
+    font-style: italic;
+  }
 }
 
 // highlighted elements
@@ -58,4 +92,9 @@ div.columns {
   @include media-query(medium) {
     padding: 0 2em;
   }
+}
+
+
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+  display: none !important;
 }

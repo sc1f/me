@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}About | Jun Tan{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row flex-container align-spaced">
+            <!-- Header -->
+            <div class="columns large-6 medium-6 small-12 flex-container align-start flex-dir-column container container--text container--align-left">
+                <h1 class="heading heading--name">jun tan</h1>
+                <div class="flex-container flex-dir-column align-self-end align-spaced container container__list">
+                    <p class="body body--large">{{  current_user.about | linebreaksbr }}</p>
+                </div>
+            </div>
+            <div class="columns large-6 medium-6 small-12 flex-container align-middle flex-dir-column container container--text">
+                <img src="/static/assets/portrait.jpg" alt="{{ current_user.name }}" class="portrait portrait__about">
+                {% if current_user.resume %}
+                    <a href="/static/assets/{{ current_user.resume }}" target="_blank" rel="noopener noreferrer" class="button button--large button__primary">my resume</a>
+                {% endif %}
+                <a href="/#work" class="button button--large">home</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

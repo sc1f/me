@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}{{  post.title | lower }} | jun tan{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row row__post flex-container align-spaced">
+            <!-- Header -->
+            <div class="columns large-6 medium-6 small-12 flex-container align-start flex-dir-column container container--align-left">
+                <div class="post--meta">
+                    <h1 class="heading">{{ post.title | lower }}</h1>
+                    {% if post.date %}
+                        <p class="body body__italic">{{ post.date | date:"F o" }}</p>
+                    {% endif %}
+                </div>
+                {% autoescape off %}
+                    {{ post.content }}
+                {% endautoescape %}
+            </div>
+            <div class="columns large-6 medium-6 small-12 flex-container align-end flex-dir-column container container--align-right">
+                <img src="/static/assets/{{ post.thumbnail }}" alt="{{ post.title }}" class="responsive-img">
+                <a href="/" class="button button__home">home</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

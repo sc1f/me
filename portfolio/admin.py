@@ -3,4 +3,8 @@ from .models import *
 # Register your models here.
 admin.site.register(UserMeta)
 admin.site.register(Category)
-admin.site.register(Post)
+
+
+@admin.register(Post)
+class PostAdmin( admin.ModelAdmin):
+    list_display = ('title', 'category', 'date_created')

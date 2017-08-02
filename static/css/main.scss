@@ -10,7 +10,7 @@ $link-color: #4A90E2;
 
 // font weights
 
-$font-weight-normal: 300;
+$font-weight-normal: 400;
 $font-weight-bold: 500;
 
 // mixins
@@ -46,7 +46,7 @@ $font-weight-bold: 500;
 @mixin media-query($lvl) {
 
   $breakpoints: (
-          small: 0px,
+          small: 350px,
           medium: 640px,
           large: 1024px,
           xlarge: 1200px,
@@ -63,3 +63,4 @@ $font-weight-bold: 500;
 @import 'imports/globals';
 @import 'imports/buttons';
 @import 'imports/home';
+@import 'imports/editor';

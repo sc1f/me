@@ -1,5 +1,6 @@
 from django.db import models
 from django.template.defaultfilters import slugify
+from ckeditor.fields import RichTextField
 
 # Create your models here.
 class UserMeta(models.Model):
@@ -7,6 +8,7 @@ class UserMeta(models.Model):
     about = models.TextField()
     work_description = models.TextField()
     image = models.ImageField(null=True)
+    resume = models.FileField(null=True)
     email = models.EmailField()
     instagram = models.CharField(max_length=200)
     github = models.CharField(max_length=200)
@@ -28,14 +30,20 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)
+        super(Category, self).save(*args, **kwargs)
+
 
 class Post(models.Model):
+    slug = models.SlugField(blank=True, editable=False)
     title = models.CharField(max_length=300)
     date_created = models.DateField(auto_now_add=True)
-    slug = models.SlugField(blank=True, editable=False)
+    date = models.DateField(null=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     thumbnail = models.ImageField(null=True)
-    content = models.TextField()
+    external_link = models.URLField(blank=True)
+    content = RichTextField()
 
     class Meta:
         verbose_name_plural = "posts"

@@ -12,6 +12,14 @@
     <link rel="stylesheet" href="{% sass_src 'css/main.scss' %}">
 </head>
 <body>
+{% comment %}{% if not user.is_superuser %}
+    <script src="//cdn.jsdelivr.net/medium-editor/latest/js/medium-editor.min.js"></script>
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/medium-editor/latest/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
+    <script src="{% static 'js/editor.js' %}"></script>
+    <div class="editor flex-container">
+        <a href="#" class="button button__primary">edit</a>
+    </div>
+{% endif %}{% endcomment %}
 {% block content %}
 {% endblock %}
 <div class="footer flex-container align-center-middle">

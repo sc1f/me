@@ -6,9 +6,26 @@
   padding-bottom: 7.5%;
 }
 
+.row__portfolio {
+  @include media-query(medium) {
+    margin-bottom: 3.75%;
+  }
+}
+
 .row__skill {
   border-bottom: 4px solid #000;
   padding-bottom: 3.75%;
+}
+
+// TODO migrate to _post.scss
+.row__post {
+  @include media-query(medium){
+    flex-direction: column-reverse;
+    .container--align-right {
+      margin-bottom: 2rem;
+    }
+
+  }
 }
 
 .container__description {
@@ -23,6 +40,10 @@
 // containers
 .container--align-left {
   align-items: flex-start;
+
+  @include media-query(medium) {
+
+  }
 
   &.container--text {
     * {
@@ -48,6 +69,7 @@
 }
 
 .container--work__buttons {
+  justify-content: flex-end;
   margin-left: auto;
   width: 60%;
   a.button {
@@ -55,25 +77,54 @@
   }
 
   &.container--contact__buttons {
+    justify-content: space-between;
     width: 75%;
+  }
+
+  @include media-query(medium) {
+    margin-top: 1em;
+    width: 100% !important;
+
+    a.button {
+      margin: 0;
+      width: 30%;
+    }
+  }
+
+  @include media-query(small) {
+    flex-direction: column;
+    a.button {
+      margin-bottom: 1rem;
+      width: 100%;
+
+      &:last-of-type {
+        margin-bottom: 0;
+      }
+    }
   }
 }
 
-
-
 .container--portfolio {
+  min-height: 15em;
   flex-wrap: wrap;
   padding-top: 3.5%;
 
+  &.container--portfolio__archive {
+    padding-top: 0;
+    margin-bottom: 3.5%;
+  }
   .container--item {
-    background-color: $theme-gray;
+    background-color: #000;
+    background-size: cover;
+    background-position: center center;
     flex: .3 auto;
     height: 15em;
     padding: 0;
     width: 33%;
 
     &:hover {
-      background: $theme-yellow;
+      outline: 4px solid black;
+      outline-offset: -4px;
     }
 
     @include media-query(large) {
@@ -88,24 +139,34 @@
   }
 }
 
-// typography
-.heading {
-  &.heading--name {
-    margin-bottom: 2em;
-  }
-}
-
-.body {
-  &.body--large {
-    font-size: 1.5rem;
-  }
-}
-
 // special styles
+.header--work, .header--contact {
+  @include media-query(medium) {
+    flex-direction: column;
+  }
+}
+
 .portrait {
-  background: url("/static/assets/portrait.jpg") no-repeat center center;
+  background: url("../assets/portrait.jpg") no-repeat center center;
   -webkit-background-size: cover;
   background-size: cover;
   height: 15em;
   width: 15em;
+
+  @include media-query(medium) {
+    margin-bottom: 1em;
+  }
+
+  &.portrait__about {
+    margin-bottom: 2rem;
+  }
+}
+
+.post--meta {
+  border-bottom: 4px solid #000;
+  margin-bottom: 2rem;
+
+  @include media-query(medium) {
+    width: 100%;
+  }
 }

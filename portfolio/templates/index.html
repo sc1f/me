@@ -4,130 +4,138 @@
 {% block title %}Jun Tan{% endblock %}
 
 {% block content %}
-<div class="container">
-    <div class="row flex-container align-spaced">
-        <!-- Header -->
-        <div class="columns large-6 medium-6 small-12 flex-container align-start flex-dir-column container container--text container--align-left">
-            <h1 class="heading heading--name">jun tan</h1>
-            <div class="flex-container flex-dir-column align-self-end align-spaced container container__list">
-                <h3>coder</h3>
-                <h3>designer</h3>
-                <h3>photographer</h3>
-            </div>
-        </div>
-        <div class="columns large-6 medium-6 small-12 flex-container align-end flex-dir-column container container--text container--align-right">
-            <div class="flex-container flex-dir-column align-self-end align-spaced container container__list">
-                <h3>student</h3>
-                <h3>plan ii & government</h3>
-                <h3>ut austin</h3>
-            </div>
-        </div>
-    </div>
-    <div class="row row__navigation">
-        <!-- Navigation -->
-        <div class="columns large-4 medium-4 small-12 flex-container flex-dir-column align-right align-center container container--align-left">
-            <a href="#work" class="button button--large button__primary">work</a>
-            <a href="/about" class="button button--large">about</a>
-        </div>
-        <div class="columns large-4 medium-4 small-12 flex-container flex-dir-column align-center-middle container">
-            <div class="portrait"></div>
-        </div>
-        <div class="columns large-4 medium-4 small-12 flex-container flex-dir-column align-left align-center container container--align-right">
-            <a href="mailto:{{user.email}}" class="button button--large">email</a>
-            <a href="https://github.com/{{user.github}}" target="_blank" rel="noopener noreferrer" class="button button--large">github</a>
-        </div>
-    </div>
-</div>
-<div class="container container__description">
-    <div class="row row__description">
-        <div class="columns large-12 medium-12 small-12">
-            <h3>what I'd like to do</h3>
-            <ul>
-                <li class="body body--large"><span class="highlighted">a summer internship in software engineering</span></li>
-                <li class="body body--large">a career at the intersection of design and government</li>
-                <li class="body body--large">learn and expand my vision</li>
-            </ul>
-        </div>
-    </div>
-</div>
-<div class="container">
-    <div class="row row__portfolio">
-        <div class="columns large-12 medium-12 small-12">
-            <div class="flex-container align-spaced align-middle header--work">
-                <h3>what I've done</h3>
-                <div class="flex-container align-self-end align-justify container container--work__buttons container--align-right">
-                    <a href="#" class="button button__primary">code</a>
-                    <a href="#" class="button">design</a>
-                    <a href="#" class="button">photo</a>
+    <div class="container">
+        <div class="row flex-container align-spaced">
+            <!-- Header -->
+            <div class="columns large-6 medium-6 small-12 flex-container align-start flex-dir-column container container--text container--align-left">
+                <h1 class="heading heading--name">jun tan</h1>
+                <div class="flex-container flex-dir-column align-self-end align-spaced container container__list">
+                    <h3>coder</h3>
+                    <h3>designer</h3>
+                    <h3>photographer</h3>
                 </div>
             </div>
-            <div class="flex-container align-spaced align-top container container--portfolio">
-                {% for i in "123456789012" %}
-                <div class="columns large-4 medium-6 small-12 container--item">
-
+            <div class="columns large-6 medium-6 small-12 flex-container align-end flex-dir-column container container--text container--align-right">
+                <div class="flex-container flex-dir-column align-self-end align-spaced container container__list">
+                    <h3>student</h3>
+                    <h3>plan ii & government</h3>
+                    <h3>ut austin</h3>
                 </div>
-                {% endfor %}
+            </div>
+        </div>
+        <div class="row row__navigation">
+            <!-- Navigation -->
+            <div class="columns large-4 medium-4 small-12 flex-container flex-dir-column align-right align-center container container--align-left">
+                <a href="#work" class="button button--large button__primary">work</a>
+                <a href="/about" class="button button--large">about</a>
+            </div>
+            <div class="columns large-4 medium-4 small-12 flex-container flex-dir-column align-center-middle container">
+                <div class="portrait"></div>
+            </div>
+            <div class="columns large-4 medium-4 small-12 flex-container flex-dir-column align-left align-center container container--align-right">
+                <a href="mailto:{{ current_user.email }}" class="button button--large">email</a>
+                <a href="https://github.com/{{ current_user.github }}" target="_blank" rel="noopener noreferrer"
+                   class="button button--large">github</a>
             </div>
         </div>
     </div>
-</div>
-<div class="container">
-    <div class="row row__skill">
-        <div class="columns large-12 medium-12 small-12">
-            <h3 class="heading heading--name">what I'm good at doing</h3>
-        </div>
-        <div class="columns large-6 medium-6 small-12 flex-container align-start flex-dir-column container container--text container--align-left">
-            <h3><span class="highlighted">full-stack code</span></h3>
-        </div>
-        <div class="columns large-6 medium-6 small-12 flex-container align-end flex-dir-column container container--text container--align-right">
-            <div class="flex-container flex-dir-column align-self-end align-spaced container container__list">
-                <h3>python, c#, php, javascript</h3>
-                <p>building <a href="#">APIs</a>,</p>
-                <p>dynamic <a href="#">web apps</a>,</p>
-                <p>wordpress <a href="#">themes</a>,</p>
-                <p>and <a href="#">chatbots</a></p>
+    <div class="container container__description">
+        <div class="row row__description">
+            <div class="columns large-12 medium-12 small-12">
+                <h3 class="heading heading--homepage">I'm looking to...</h3>
+                <ul>
+                    <li class="body body--large"><span class="highlighted">intern in software engineering</span></li>
+                    <li class="body body--large">work at the intersection of design and government</li>
+                    <li class="body body--large">learn and expand my vision</li>
+                </ul>
             </div>
         </div>
     </div>
-    <div class="row row__skill">
-        <div class="columns large-6 medium-6 small-12 flex-container align-start flex-dir-column container container--text container--align-left">
-            <h3><span class="highlighted">beautiful designs</span></h3>
-        </div>
-        <div class="columns large-6 medium-6 small-12 flex-container align-end flex-dir-column container container--text container--align-right">
-            <div class="flex-container flex-dir-column align-self-end align-spaced container container__list">
-                <h3>sketch, illustrator, indesign, photoshop</h3>
-                <p>building <a href="#">APIs</a>,</p>
-                <p>dynamic <a href="#">web apps</a>,</p>
-                <p>wordpress <a href="#">themes</a>,</p>
-                <p>and <a href="#">chatbots</a></p>
+    <div class="container" id="work" ng-app="portfolioApp">
+        <div class="row row__portfolio">
+            <div class="columns large-12 medium-12 small-12">
+                <div class="flex-container align-spaced align-middle header--work">
+                    <h3 class="heading heading--homepage">I've done...</h3>
+                    <div class="flex-container align-self-end align-end container container--work__buttons container--align-right">
+                        <a href="/archive" class="button button__archive">see everything</a>
+                    </div>
+                </div>
+                <div class="flex-container align-start align-top container container--portfolio">
+                    {% if not items %}
+                        <p class="body body--large">nothing to see here.</p>
+                    {% else %}
+                        {% for item in items %}
+                            <a href="{% if item.external_link %} {{ item.external_link }} {% else %} /posts/{{ item.slug }} {% endif %}"
+                                    {% if item.external_link %} target="_blank" rel="noopener noreferrer" {% endif %}
+                               class="columns large-4 medium-6 small-12 container--item"
+                               style="background-image:url(/static/assets/{{ item.thumbnail }})">
+                                <!-- FIXME this is gonna break -->
+                            </a>
+                        {% endfor %}
+                    {% endif %}
+                </div>
             </div>
         </div>
     </div>
-    <div class="row row__skill">
-        <div class="columns large-6 medium-6 small-12 flex-container align-start flex-dir-column container container--text container--align-left">
-            <h3><span class="highlighted">compelling photographs</span></h3>
+    <div class="container">
+        <div class="row row__skill">
+            <div class="columns large-12 medium-12 small-12">
+                <h3 class="heading heading--name">I'm good at...</h3>
+            </div>
+            <div class="columns large-6 medium-6 small-12 flex-container align-start flex-dir-column container container--text container--align-left">
+                <h3><span class="highlighted">full-stack code</span></h3>
+            </div>
+            <div class="columns large-6 medium-6 small-12 flex-container align-end flex-dir-column container container--text container--align-right">
+                <div class="flex-container flex-dir-column align-self-end align-spaced container container__list">
+                    <h3>python, c#, php, javascript</h3>
+                    <p>building <a href="#">APIs</a>,</p>
+                    <p>dynamic <a href="#">web apps</a>,</p>
+                    <p>wordpress <a href="#">themes</a>,</p>
+                    <p>and <a href="#">chatbots</a></p>
+                </div>
+            </div>
         </div>
-        <div class="columns large-6 medium-6 small-12 flex-container align-end flex-dir-column container container--text container--align-right">
-            <div class="flex-container flex-dir-column align-self-end align-spaced container container__list">
-                <h3>photojournalism, street, travel</h3>
-                <p>building <a href="#">APIs</a>,</p>
-                <p>dynamic <a href="#">web apps</a>,</p>
-                <p>wordpress <a href="#">themes</a>,</p>
-                <p>and <a href="#">chatbots</a></p>
+        <div class="row row__skill">
+            <div class="columns large-6 medium-6 small-12 flex-container align-start flex-dir-column container container--text container--align-left">
+                <h3><span class="highlighted">beautiful designs</span></h3>
+            </div>
+            <div class="columns large-6 medium-6 small-12 flex-container align-end flex-dir-column container container--text container--align-right">
+                <div class="flex-container flex-dir-column align-self-end align-spaced container container__list">
+                    <h3>sketch, illustrator, indesign, photoshop</h3>
+                    <p>building <a href="#">APIs</a>,</p>
+                    <p>dynamic <a href="#">web apps</a>,</p>
+                    <p>wordpress <a href="#">themes</a>,</p>
+                    <p>and <a href="#">chatbots</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="row row__skill">
+            <div class="columns large-6 medium-6 small-12 flex-container align-start flex-dir-column container container--text container--align-left">
+                <h3><span class="highlighted">compelling photographs</span></h3>
+            </div>
+            <div class="columns large-6 medium-6 small-12 flex-container align-end flex-dir-column container container--text container--align-right">
+                <div class="flex-container flex-dir-column align-self-end align-spaced container container__list">
+                    <h3>photojournalism, street, travel</h3>
+                    <p>building <a href="#">APIs</a>,</p>
+                    <p>dynamic <a href="#">web apps</a>,</p>
+                    <p>wordpress <a href="#">themes</a>,</p>
+                    <p>and <a href="#">chatbots</a></p>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<div class="container">
-    <div class="row">
-        <div class="columns large-12 small-12 flex-container align-justify align-middle">
-            <h3>let's talk</h3>
-            <div class="flex-container align-self-end align-justify container container--work__buttons container--contact__buttons container--align-right">
-                <a href="mailto:{{user.email}}" class="button">email</a>
-                <a href="https://github.com/{{user.github}}" target="_blank" rel="noopener noreferrer" class="button">github</a>
-                <a href="https://instagram.com/{{user.instagram}}" target="_blank" rel="noopener noreferrer" class="button">instagram</a>
+    <div class="container">
+        <div class="row">
+            <div class="columns large-12 small-12 flex-container align-justify align-middle header--contact">
+                <h3 class="heading heading--homepage">I'm available at...</h3>
+                <div class="flex-container align-self-end align-justify container container--work__buttons container--contact__buttons container--align-right">
+                    <a href="mailto:{{ current_user.email }}" class="button">email</a>
+                    <a href="https://github.com/{{ current_user.github }}" target="_blank" rel="noopener noreferrer"
+                       class="button">github</a>
+                    <a href="https://instagram.com/{{ current_user.instagram }}" target="_blank" rel="noopener noreferrer"
+                       class="button">instagram</a>
+                </div>
             </div>
         </div>
     </div>
-</div>
 {% endblock %}
