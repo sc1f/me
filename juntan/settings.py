@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'sass_processor',
     'portfolio.apps.PortfolioConfig',
-    'ckeditor'
+    'ckeditor',
+    'ckeditor_uploader'
 ]
 
 MIDDLEWARE = [
@@ -122,3 +123,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static/assets')
 # Django SASS
 SASS_PROCESSOR_ENABLED = True
 SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR, 'static')  # Somehow this works - let's not break it
+
+CKEDITOR_UPLOAD_PATH = 'uploads/'
+CKEDITOR_IMAGE_BACKEND = 'pillow'
