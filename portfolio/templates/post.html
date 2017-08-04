@@ -23,7 +23,7 @@
     <div class="container">
         <div class="row row__post flex-container align-spaced">
             <!-- Header -->
-            <div class="columns large-6 medium-6 small-12 flex-container align-start flex-dir-column container container--align-left">
+            <div class="columns large-8 medium-4 small-12 flex-container align-start flex-dir-column container container--align-left">
                 <div class="post--meta">
                     <h1 class="heading">{{ post.title | lower }}</h1>
                     {% if post.date %}
@@ -36,7 +36,7 @@
                     {% endautoescape %}
                 </div>
             </div>
-            <div class="columns large-6 medium-6 small-12 flex-container align-end flex-dir-column container container--align-right">
+            <div class="columns large-4 medium-4 small-12 flex-container align-end flex-dir-column container container--align-right">
                 <img src="https://s3.amazonaws.com/juntan-portfolio/{{ post.thumbnail }}" alt="{{ post.title }}" class="responsive-img">
                 <a href="/" class="button button__home">home</a>
             </div>

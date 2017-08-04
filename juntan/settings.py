@@ -16,6 +16,7 @@ try:
     site_secrets_present = True
 except ImportError:
     site_secrets_present = False
+    raise ImportError("You need to create a site_secrets.py file in your settings directory with your database, debug, secret key, and allowed hosts settings.")
 
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -26,6 +27,9 @@ if site_secrets_present:
     DEBUG = debug
     DATABASES = db_config
     ALLOWED_HOSTS = allowed_hosts
+else:
+    raise ImportError("You need to create a site_secrets.py file in your settings directory with your database, debug, secret key, and allowed hosts settings.")
+
 
 # Application definition
 
@@ -35,8 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #'material',
-    #'material.admin',
     'django.contrib.admin',
     'sass_processor',
     'portfolio.apps.PortfolioConfig',
@@ -129,4 +131,3 @@ CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_IMAGE_BACKEND = 'pillow'
 
 DEFAULT_FILE_STORAGE = 'django_s3_storage.storage.S3Storage'
-# AWS

@@ -46,7 +46,7 @@ def post(request, post_slug):
     post = get_object_or_404(Post, slug=post_slug)
 
     if post.external_link:
-        return redirect('/')
+        return redirect(post.external_link)
 
     context = {
         "post": post
