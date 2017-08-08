@@ -18,6 +18,11 @@ except ImportError:
     site_secrets_present = False
     raise ImportError("You need to create a site_secrets.py file in your settings directory with your database, debug, secret key, and allowed hosts settings.")
 
+try:
+    import local_secrets
+    local = True
+except ImportError:
+    local = False
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -118,7 +123,7 @@ STATICFILES_FINDERS = [
     'sass_processor.finders.CssFinder',
 ]
 
-if site_secrets_present:
+if local:
     STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 else:
     STATIC_ROOT = os.path.join(BASE_DIR, 'static')

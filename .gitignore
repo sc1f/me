@@ -16,3 +16,4 @@ portfolio/portfolio.iml
 site.iml
 static/static.iml
 node_modules
+local_secrets.py
