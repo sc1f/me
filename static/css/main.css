@@ -70,6 +70,17 @@ ul, ol {
   .body.body__italic {
     font-style: italic; }
 
+.lazy {
+  -webkit-transition: opacity 500ms ease-in-out;
+  -moz-transition: opacity 500ms ease-in-out;
+  -ms-transition: opacity 500ms ease-in-out;
+  -o-transition: opacity 500ms ease-in-out;
+  transition: opacity 500ms ease-in-out;
+  opacity: 0; }
+
+.lazy.lazy-loaded {
+  opacity: 1; }
+
 .highlighted {
   background-color: #FFEC00;
   color: #000;
