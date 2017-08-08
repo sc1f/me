@@ -1,6 +1,6 @@
 .row__post {
   @include media-query(medium){
-    flex-direction: column-reverse;
+    flex-direction: row-reverse;
     .container--align-right {
       margin-bottom: 2rem;
     }

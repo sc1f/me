@@ -90,6 +90,7 @@
 
     @include media-query(medium) {
       flex: 1 auto;
+      margin: 0 0 3.75% 0;
       width: 100%;
     }
   }

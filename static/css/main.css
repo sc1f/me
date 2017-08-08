@@ -7,6 +7,9 @@ body {
 
 .row {
   padding-top: 3.75%; }
+  @media screen and (max-width: 640px) {
+    .row {
+      padding-top: 5%; } }
 
 @media screen and (max-width: 640px) {
   .row__about {
@@ -54,7 +57,9 @@ ul, ol {
         margin-bottom: 1em; } }
   @media screen and (max-width: 640px) {
     .heading.heading--homepage {
-      font-size: 2.5em; } }
+      align-self: flex-start;
+      font-size: 2.5em;
+      text-align: left; } }
 
 .body {
   font-weight: 400 !important; }
@@ -198,6 +203,7 @@ ul, ol {
     @media screen and (max-width: 640px) {
       .container--portfolio .container--item {
         flex: 1 auto;
+        margin: 0 0 3.75% 0;
         width: 100%; } }
 
 @media screen and (max-width: 640px) {
@@ -205,6 +211,9 @@ ul, ol {
     flex-direction: column; } }
 
 .portrait {
+  background: url("../assets/portrait.jpg") no-repeat center center;
+  -webkit-background-size: cover;
+  background-size: cover;
   height: 15em;
   width: 15em; }
   @media screen and (max-width: 640px) {
@@ -215,7 +224,7 @@ ul, ol {
 
 @media screen and (max-width: 640px) {
   .row__post {
-    flex-direction: column-reverse; }
+    flex-direction: row-reverse; }
     .row__post .container--align-right {
       margin-bottom: 2rem; } }
 
@@ -226,7 +235,7 @@ ul, ol {
     .post--meta {
       width: 100%; } }
 
-.post--container > * > img {
-  height: auto !important;
-}
+.post--container * img {
+  height: auto !important; }
+
 /*# sourceMappingURL=../../../../../../../static/css/main.css.map */
