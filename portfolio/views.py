@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import UserMeta, Category, Post
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-
+from juntan.settings import site_secrets_present
 
 def handler404(request):
     response = render_to_response('404.html', {},
@@ -21,14 +21,16 @@ def handler500(request):
 def homepage(request):
     ctx = {
         "current_user": UserMeta.objects.get(id=1),
-        "items": Post.objects.all().order_by('-date', 'title')
+        "items": Post.objects.all().order_by('-date', 'title'),
+        "local": site_secrets_present
     }
     return render(request, 'index.html', context=ctx)
 
 def about(request):
     user = UserMeta.objects.get(id=1)
     ctx = {
-        "current_user": user
+        "current_user": user,
+        "local": site_secrets_present
     }
     return render(request, 'about.html', context=ctx)
 
@@ -37,7 +39,8 @@ def archive(request):
         "count": len(Post.objects.all()),
         "code": Post.objects.filter(category__name="Code").all().order_by('-date', 'title'),
         "design": Post.objects.filter(category__name="Design").all().order_by('-date', 'title'),
-        "photo": Post.objects.filter(category__name="Photo").all().order_by('-date', 'title')
+        "photo": Post.objects.filter(category__name="Photo").all().order_by('-date', 'title'),
+        "local": site_secrets_present
     }
 
     return render(request, 'archive.html', context=ctx)
@@ -49,7 +52,8 @@ def post(request, post_slug):
         return redirect(post.external_link)
 
     context = {
-        "post": post
+        "post": post,
+        "local": site_secrets_present
     }
 
     return render(request, 'post.html', context)
