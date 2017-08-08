@@ -81,8 +81,8 @@
                         {% for item in items %}
                             <a href="{% if item.external_link %} {{ item.external_link }} {% else %} /posts/{{ item.slug }} {% endif %}"
                                     {% if item.external_link %} target="_blank" rel="noopener noreferrer" {% endif %}
-                               class="columns large-4 medium-6 small-12 container--item"
-                               style="background-image:url(https://s3.amazonaws.com/juntan-portfolio/{{ item.thumbnail }})">
+                               class="columns large-4 medium-6 small-12 container--item lazy"
+                               data-src="https://s3.amazonaws.com/juntan-portfolio/{{ item.thumbnail }}">
                             </a>
                         {% endfor %}
                     {% endif %}
@@ -152,4 +152,6 @@
             </div>
         </div>
     </div>
+    <script src="{% static 'js/bundle.min.js' %}"></script>
+    <script src="{% static 'js/app.js' %}"></script>
 {% endblock %}

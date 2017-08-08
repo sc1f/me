@@ -1,1 +1,5 @@
-$(document).pjax('a[data-pjax]', '#portfolio-items');
+var bLazy = new Blazy({
+    selector: '.lazy, img',
+    successClass: 'lazy-loaded',
+    errorClass: 'lazy-error'
+});
