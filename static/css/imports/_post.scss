@@ -20,7 +20,9 @@
 .post--container {
   * {
     img {
+      border: 4px solid #000;
       height: auto !important;
+      margin: .75rem 0;
     }
   }
 }
