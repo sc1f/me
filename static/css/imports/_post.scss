@@ -11,10 +11,7 @@
 .post--meta {
   border-bottom: 4px solid #000;
   margin-bottom: 2rem;
-
-  @include media-query(medium) {
-    width: 100%;
-  }
+  width: 100%;
 }
 
 .post--container {

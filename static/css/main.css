@@ -230,10 +230,8 @@ ul, ol {
 
 .post--meta {
   border-bottom: 4px solid #000;
-  margin-bottom: 2rem; }
-  @media screen and (max-width: 640px) {
-    .post--meta {
-      width: 100%; } }
+  margin-bottom: 2rem;
+  width: 100%; }
 
 .post--container * img {
   border: 4px solid #000;
