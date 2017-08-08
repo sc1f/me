@@ -19,7 +19,7 @@ except ImportError:
     raise ImportError("You need to create a site_secrets.py file in your settings directory with your database, debug, secret key, and allowed hosts settings.")
 
 try:
-    import local_secrets
+    from .local_secrets import *
     local = True
 except ImportError:
     local = False

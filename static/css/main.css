@@ -236,6 +236,8 @@ ul, ol {
       width: 100%; } }
 
 .post--container * img {
-  height: auto !important; }
+  border: 4px solid #000;
+  height: auto !important;
+  margin: .75rem 0; }
 
 /*# sourceMappingURL=../../../../../../../static/css/main.css.map */
