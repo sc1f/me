@@ -10,7 +10,9 @@
             <!-- Header -->
             <div class="columns large-6 medium-6 small-12 flex-container align-start flex-dir-column container container--text container--align-left">
                 <h1 class="heading heading--name">jun tan</h1>
+                {% autoescape off %}
                 <p class="body body--large">{{ current_user.about | linebreaksbr }}</p>
+                {% endautoescape %}
                 <a href="/#work" class="button">home</a>
             </div>
             <div class="columns large-6 medium-6 small-12 flex-container align-middle flex-dir-column container container--text">
