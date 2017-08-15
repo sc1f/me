@@ -10,9 +10,9 @@
             <!-- Header -->
             <div class="columns large-6 medium-6 small-12 flex-container align-start flex-dir-column container container--text container--text__about container--align-left">
                 <h1 class="heading heading--name heading--name__about">jun tan</h1>
-                {% autoescape off %}
-                    {{ current_user.about | linebreaksbr }}
-                {% endautoescape %}
+                <p class="body body--large">{{ current_user.about | linebreaksbr }}</p>
+                <h1 class="heading">about this site</h1>
+                <p class="body body--large">{{ current_user.about_site | linebreaksbr }}</p>
                 <a href="/#work" class="button button__home--about">home</a>
             </div>
             <div class="columns large-6 medium-6 small-12 flex-container align-middle flex-dir-column container container--text">
