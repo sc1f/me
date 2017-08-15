@@ -5,8 +5,7 @@ from ckeditor.fields import RichTextField
 # Create your models here.
 class UserMeta(models.Model):
     name = models.CharField(max_length=300, unique=True)
-    about = models.TextField()
-    work_description = models.TextField()
+    about = RichTextField()
     image = models.ImageField(null=True)
     resume = models.FileField(null=True)
     email = models.EmailField()

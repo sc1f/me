@@ -40,7 +40,7 @@ def archive(request):
         "code": Post.objects.filter(category__name="Code").all().order_by('-date', 'title'),
         "design": Post.objects.filter(category__name="Design").all().order_by('-date', 'title'),
         "photo": Post.objects.filter(category__name="Photo").all().order_by('-date', 'title'),
-        "local": local
+        "local": local,
     }
 
     return render(request, 'archive.html', context=ctx)
