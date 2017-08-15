@@ -25,6 +25,8 @@ body {
   align-items: flex-start; }
   .container--align-left.container--text * {
     font-weight: 500; }
+  .container--align-left.container--text.container--text__about {
+    font-weight: 400; }
 
 .container--align-right {
   align-items: flex-end;
@@ -51,6 +53,8 @@ ul, ol {
   font-weight: 500; }
   .heading.heading--name {
     margin-bottom: 2em; }
+    .heading.heading--name.heading--name__about {
+      margin-bottom: .75em; }
     @media screen and (max-width: 640px) {
       .heading.heading--name {
         font-size: 2.5em;
@@ -137,6 +141,8 @@ ul, ol {
     font-size: 1rem;
     margin-top: 1rem;
     width: 30%; }
+  .button.button__home--about {
+    margin-top: 3rem; }
   .button.button__archive {
     width: 50%; }
   .button.button--large {

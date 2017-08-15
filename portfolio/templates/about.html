@@ -8,12 +8,12 @@
     <div class="container">
         <div class="row flex-container align-spaced">
             <!-- Header -->
-            <div class="columns large-6 medium-6 small-12 flex-container align-start flex-dir-column container container--text container--align-left">
-                <h1 class="heading heading--name">jun tan</h1>
+            <div class="columns large-6 medium-6 small-12 flex-container align-start flex-dir-column container container--text container--text__about container--align-left">
+                <h1 class="heading heading--name heading--name__about">jun tan</h1>
                 {% autoescape off %}
                     {{ current_user.about | linebreaksbr }}
                 {% endautoescape %}
-                <a href="/#work" class="button">home</a>
+                <a href="/#work" class="button button__home--about">home</a>
             </div>
             <div class="columns large-6 medium-6 small-12 flex-container align-middle flex-dir-column container container--text">
                 <img src="https://s3.amazonaws.com/juntan-portfolio/{{ current_user.image }}" alt="{{ current_user.name }}" class="portrait portrait__about">
