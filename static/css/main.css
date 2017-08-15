@@ -26,7 +26,7 @@ body {
   .container--align-left.container--text * {
     font-weight: 500; }
   .container--align-left.container--text.container--text__about {
-    font-weight: 400; }
+    font-weight: 400 !important; }
 
 .container--align-right {
   align-items: flex-end;
