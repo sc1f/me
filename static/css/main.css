@@ -209,11 +209,6 @@ ul, ol {
     flex: .3 auto;
     height: 15em;
     padding: 0;
-    -webkit-transition: all 500ms;
-    -moz-transition: all 500ms;
-    -ms-transition: all 500ms;
-    -o-transition: all 500ms;
-    transition: all 500ms;
     width: 33%; }
     .container--portfolio .container--item:hover {
       outline: 4px solid black;
