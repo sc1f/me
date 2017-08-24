@@ -21,7 +21,7 @@ def handler500(request):
 def homepage(request):
     ctx = {
         "current_user": UserMeta.objects.get(id=1),
-        "items": Post.objects.all().order_by('-date', 'title'),
+        "items": Post.objects.all().order_by('-date', 'title')[:12],
         "local": local
     }
     return render(request, 'index.html', context=ctx)
