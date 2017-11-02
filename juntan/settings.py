@@ -35,7 +35,7 @@ DATABASES = {
 if local:
     ALLOWED_HOSTS = []
 else:
-    ALLOWED_HOSTS = ['juntan.me', 'https://juntan-portfolio.herokuapp.com']
+    ALLOWED_HOSTS = ['juntan.me', 'juntan-portfolio.herokuapp.com']
 
 # Application definition
 
