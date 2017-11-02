@@ -11,30 +11,31 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
-try:
-    from .site_secrets import *
-    site_secrets_present = True
-except ImportError:
-    site_secrets_present = False
-    raise ImportError("You need to create a site_secrets.py file in your settings directory with your database, debug, secret key, and allowed hosts settings.")
 
-try:
-    from .local_secrets import *
+if os.environ.get('IS_LOCAL') is not None:
     local = True
-except ImportError:
+else:
     local = False
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SECRET_KEY = os.environ.get('SECRET_KEY')
+DEBUG = os.environ.get('DEBUG')
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'HOST': os.environ.get('DB_HOST'),
+        'PORT': ''
+    }
+}
 
-if site_secrets_present:
-    SECRET_KEY = secret_key
-    DEBUG = debug
-    DATABASES = db_config
-    ALLOWED_HOSTS = allowed_hosts
+if local:
+    ALLOWED_HOSTS = []
 else:
-    raise ImportError("You need to create a site_secrets.py file in your settings directory with your database, debug, secret key, and allowed hosts settings.")
-
+    ALLOWED_HOSTS = ['juntan.me']
 
 # Application definition
 
@@ -139,3 +140,6 @@ CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_IMAGE_BACKEND = 'pillow'
 
 DEFAULT_FILE_STORAGE = 'django_s3_storage.storage.S3Storage'
+
+# AWS configs
+AWS_S3_MAX_AGE_SECONDS = 60 * 60 * 24 * 365
