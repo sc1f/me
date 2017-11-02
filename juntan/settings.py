@@ -28,14 +28,14 @@ DATABASES = {
         'USER': os.environ.get('DB_USER'),
         'PASSWORD': os.environ.get('DB_PASSWORD'),
         'HOST': os.environ.get('DB_HOST'),
-        'PORT': ''
+        'PORT': os.environ.get('DB_PORT', '')
     }
 }
 
 if local:
     ALLOWED_HOSTS = []
 else:
-    ALLOWED_HOSTS = ['juntan.me']
+    ALLOWED_HOSTS = ['juntan.me', 'https://juntan-portfolio.herokuapp.com']
 
 # Application definition
 
