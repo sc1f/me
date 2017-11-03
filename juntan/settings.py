@@ -20,7 +20,11 @@ else:
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = os.environ.get('SECRET_KEY')
-DEBUG = os.environ.get('DEBUG')
+if os.environ.get('DEBUG') == 'True':
+    DEBUG = True
+else:
+    DEBUG = False
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
@@ -35,7 +39,7 @@ DATABASES = {
 if local:
     ALLOWED_HOSTS = []
 else:
-    ALLOWED_HOSTS = ['juntan.me', 'juntan-portfolio.herokuapp.com']
+    ALLOWED_HOSTS = ['juntan.me', 'www.juntan.me', 'juntan-portfolio.herokuapp.com']
 
 # Application definition
 
