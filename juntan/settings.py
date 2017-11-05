@@ -146,4 +146,9 @@ CKEDITOR_IMAGE_BACKEND = 'pillow'
 DEFAULT_FILE_STORAGE = 'django_s3_storage.storage.S3Storage'
 
 # AWS configs
+AWS_S3_BUCKET_NAME = os.environ.get('AWS_S3_BUCKET_NAME')
+AWS_REGION = os.environ.get('AWS_REGION')
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_S3_BUCKET_AUTH = False
 AWS_S3_MAX_AGE_SECONDS = 60 * 60 * 24 * 365
