@@ -12,6 +12,7 @@ class UserMeta(models.Model):
     email = models.EmailField()
     instagram = models.CharField(max_length=200)
     github = models.CharField(max_length=200)
+    linkedin = models.URLField()
 
     class Meta:
         verbose_name_plural = "users"
