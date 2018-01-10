@@ -16,7 +16,7 @@
                 <a href="/#work" class="button button__home--about">home</a>
             </div>
             <div class="columns large-6 medium-6 small-12 flex-container align-middle flex-dir-column container container--text">
-                <img src="https://s3.amazonaws.com/juntan-portfolio/{{ current_user.image }}" alt="{{ current_user.name }}" class="portrait portrait__about">
+                <div class="portrait" style="background: url('https://s3.amazonaws.com/juntan-portfolio/{{ current_user.image }}') no-repeat center center;-webkit-background-size: cover;background-size: cover; margin-bottom: 1em"></div>
                 {% if current_user.resume %}
                     <a href="https://s3.amazonaws.com/juntan-portfolio/{{ current_user.resume }}" target="_blank" rel="noopener noreferrer"
                        class="button button--large button__primary">my resume</a>
