@@ -31,8 +31,21 @@ body {
     flex-direction: column;
 
     .columns.large-12 {
-      margin-bottom: 1em;
+      margin-bottom: 6.5em;
     }
+  }
+}
+
+.footer {
+  padding: 3.75% 2em;
+  .footer-text {
+    font-size: 1rem;
+  }
+}
+
+div.columns {
+  @include media-query(medium) {
+    padding: 0 2em;
   }
 }
 
@@ -114,10 +127,32 @@ ul, ol {
   }
 }
 
+.logo--container {
+  @include media-query(medium) {
+    margin-bottom: 2em;
+  }
+}
+
+.logo {
+  color: #000;
+  font-size: 1.5rem;
+  height: 100%;
+  text-decoration: none;
+  width: auto !important;
+  
+  &:hover {
+    background: #000000;
+    color: $theme-yellow;
+  }
+}
+
 .body {
   font-weight: $font-weight-normal !important;
   &.body--large {
-    font-size: 1.5rem;
+    font-size: 1.25rem;
+    @include media-query(medium){
+      font-size: 1rem;
+    }
   }
   &.body--xlarge {
     font-size: 2rem;
@@ -161,20 +196,6 @@ ul, ol {
   background: $theme-yellow; /* Gecko Browsers */
   color: #000;
   opacity: 1;
-}
-
-.footer {
-  margin-top: 3.75%;
-  padding: 3.75% 2em;
-  .footer-text {
-    font-size: 1rem;
-  }
-}
-
-div.columns {
-  @include media-query(medium) {
-    padding: 0 2em;
-  }
 }
 
 

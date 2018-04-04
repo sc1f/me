@@ -2,7 +2,7 @@
 
 {% load staticfiles %}
 
-{% block title %}{{  post.title | lower }} | jun tan{% endblock %}
+{% block title %}{{ post.title | lower }} | jun tan{% endblock %}
 {% block meta %}
     <!-- fb og -->
     <meta property="og:url"
@@ -22,6 +22,9 @@
 {% block content %}
     <div class="container">
         <div class="row row__post flex-container align-spaced">
+            <div class="large-2 medium-2 small-12 logo--container">
+                <a href="/" class="logo highlighted">jun tan</a>
+            </div>
             <!-- Header -->
             <div class="columns large-8 medium-8 small-12 flex-container align-start flex-dir-column container container--align-left">
                 <div class="post--meta">
@@ -39,9 +42,7 @@
                     {% endautoescape %}
                 </div>
             </div>
-            <div class="columns large-4 medium-4 small-12 flex-container align-end flex-dir-column container container--align-right">
-                <img src="https://s3.amazonaws.com/juntan-portfolio/{{ post.thumbnail }}" alt="{{ post.title }}" class="responsive-img">
-                <a href="/" class="button button__home">home</a>
+            <div class="columns large-2 medium-2 small-12 flex-container align-end flex-dir-column container container--align-right">
             </div>
         </div>
     </div>

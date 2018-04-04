@@ -19,7 +19,16 @@ body {
   .row__archive {
     flex-direction: column; }
     .row__archive .columns.large-12 {
-      margin-bottom: 1em; } }
+      margin-bottom: 6.5em; } }
+
+.footer {
+  padding: 3.75% 2em; }
+  .footer .footer-text {
+    font-size: 1rem; }
+
+@media screen and (max-width: 640px) {
+  div.columns {
+    padding: 0 2em; } }
 
 .container--align-left {
   align-items: flex-start; }
@@ -65,10 +74,27 @@ ul, ol {
       font-size: 2.5em;
       text-align: left; } }
 
+@media screen and (max-width: 640px) {
+  .logo--container {
+    margin-bottom: 2em; } }
+
+.logo {
+  color: #000;
+  font-size: 1.5rem;
+  height: 100%;
+  text-decoration: none;
+  width: auto !important; }
+  .logo:hover {
+    background: #000000;
+    color: #FFEC00; }
+
 .body {
   font-weight: 400 !important; }
   .body.body--large {
-    font-size: 1.5rem; }
+    font-size: 1.25rem; }
+    @media screen and (max-width: 640px) {
+      .body.body--large {
+        font-size: 1rem; } }
   .body.body--xlarge {
     font-size: 2rem; }
   .body.body__italic {
@@ -103,16 +129,6 @@ ul, ol {
   color: #000;
   opacity: 1; }
 
-.footer {
-  margin-top: 3.75%;
-  padding: 3.75% 2em; }
-  .footer .footer-text {
-    font-size: 1rem; }
-
-@media screen and (max-width: 640px) {
-  div.columns {
-    padding: 0 2em; } }
-
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important; }
 
@@ -140,9 +156,10 @@ ul, ol {
   .button.button__home {
     font-size: 1rem;
     margin-top: 1rem;
+    margin-bottom: 1rem;
     width: 30%; }
   .button.button__home--about {
-    margin-top: 3rem; }
+    margin: 2rem 0 1rem 0; }
   .button.button__archive {
     width: 50%; }
   .button.button--large {
@@ -236,8 +253,6 @@ ul, ol {
   @media screen and (max-width: 640px) {
     .portrait {
       margin-bottom: 1em; } }
-  .portrait.portrait__about {
-    margin-bottom: 2rem; }
 
 @media screen and (max-width: 640px) {
   .row__post {
@@ -250,9 +265,11 @@ ul, ol {
   margin-bottom: 2rem;
   width: 100%; }
 
-.post--container * img {
-  border: 4px solid #000;
-  height: auto !important;
-  margin: .75rem 0; }
+.post--container {
+  width: 100%; }
+  .post--container * img {
+    border: 4px solid #000;
+    height: auto !important;
+    margin: .75rem 0; }
 
 /*# sourceMappingURL=../../../../../../../static/css/main.css.map */

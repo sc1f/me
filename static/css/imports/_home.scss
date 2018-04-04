@@ -104,7 +104,7 @@
 }
 
 .portrait {
-  background: url("../assets/portrait.jpg") no-repeat center center;
+  background: url("../assets/portrait.jpg") no-repeat center center; // fallback portrait url
   -webkit-background-size: cover;
   background-size: cover;
   height: 15em;
@@ -112,9 +112,5 @@
 
   @include media-query(medium) {
     margin-bottom: 1em;
-  }
-
-  &.portrait__about {
-    margin-bottom: 2rem;
   }
 }
