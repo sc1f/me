@@ -24,3 +24,19 @@
     }
   }
 }
+
+.related {
+  margin-right: auto;
+  @include media-query(medium) {
+    //flex-direction: column;
+  }
+}
+
+.related__header {
+  margin-right: auto;
+  width: 100%;
+}
+
+.related__post {
+  margin-bottom: 0;
+}

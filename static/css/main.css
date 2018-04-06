@@ -272,4 +272,14 @@ ul, ol {
     height: auto !important;
     margin: .75rem 0; }
 
+.related {
+  margin-right: auto; }
+
+.related__header {
+  margin-right: auto;
+  width: 100%; }
+
+.related__post {
+  margin-bottom: 0; }
+
 /*# sourceMappingURL=../../../../../../../static/css/main.css.map */

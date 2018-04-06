@@ -35,22 +35,28 @@ def about(request):
 def archive(request):
     ctx = {
         "count": len(Post.objects.all()),
-        "code": Post.objects.filter(category__name="Code").all().order_by('-date', 'title'),
-        "design": Post.objects.filter(category__name="Design").all().order_by('-date', 'title'),
-        "photo": Post.objects.filter(category__name="Photo").all().order_by('-date', 'title'),
+        "code": Post.objects.filter(category__name="Code").order_by('-date', 'title'),
+        "design": Post.objects.filter(category__name="Design").order_by('-date', 'title'),
+        "photo": Post.objects.filter(category__name="Photo").order_by('-date', 'title'),
         "local": local,
     }
 
     return render(request, 'archive.html', context=ctx)
 
 def post(request, post_slug):
-    post = get_object_or_404(Post, slug=post_slug)
+    if not post_slug:
+        return redirect("/archive")
+    requested_post = get_object_or_404(Post, slug=post_slug)
 
-    if post.external_link:
-        return redirect(post.external_link)
+    if requested_post.external_link:
+        # push out to link
+        return redirect(requested_post.external_link)
+
+    related_posts = Post.objects.filter(category__name=requested_post.category.name).exclude(slug=post_slug).order_by('-date', 'title')[:3]
 
     context = {
-        "post": post,
+        "post": requested_post,
+        "related_posts": related_posts,
         "local": local
     }
 
