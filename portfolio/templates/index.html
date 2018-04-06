@@ -44,7 +44,7 @@
                 <a href="/about" class="button button--large">about</a>
             </div>
             <div class="columns large-4 medium-4 small-12 flex-container flex-dir-column align-center-middle container">
-                <div class="portrait" style="background: url('https://s3.amazonaws.com/juntan-portfolio/{{ current_user.image }}') no-repeat center center;-webkit-background-size: cover;background-size: cover;"></div>
+                <div class="portrait" style="background-image: url('https://s3.amazonaws.com/juntan-portfolio/{{ current_user.image }}') !important"></div>
             </div>
             <div class="columns large-4 medium-4 small-12 flex-container flex-dir-column align-left align-center container container--align-right">
                 <a href="mailto:{{ current_user.email }}" class="button button--large">email</a>

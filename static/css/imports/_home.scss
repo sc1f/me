@@ -104,7 +104,8 @@
 }
 
 .portrait {
-  background: url("../assets/portrait.jpg") no-repeat center center; // fallback portrait url
+  // fallback portrait url
+  background: $theme-gray no-repeat center center;
   -webkit-background-size: cover;
   background-size: cover;
   height: 15em;
