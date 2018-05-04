@@ -39,7 +39,8 @@ body {
 .footer {
   padding: 3.75% 2em;
   .footer-text {
-    font-size: 1rem;
+    font-size: .8rem;
+    font-style: italic;
   }
 }
 
@@ -87,6 +88,9 @@ div.columns {
 // typography
 h3 {
   font-weight: $font-weight-bold;
+  @include media-query(large) {
+    font-size: 1.5rem;
+  }
 }
 a {
   color: $link-color;
@@ -106,7 +110,7 @@ ul, ol {
   font-weight: $font-weight-bold;
 
   &.heading--name {
-    margin-bottom: 2em;
+    margin-bottom: 3rem;
 
     &.heading--name__about {
       margin-bottom: .75em;
