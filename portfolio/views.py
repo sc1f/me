@@ -17,23 +17,23 @@ def handler500(request):
 
 # Create your views here.
 def homepage(request):
-    ctx = {
+    context = {
         "current_user": UserMeta.objects.get(id=1),
         "items": Post.objects.all().order_by('-date', 'title')[:12],
         "local": local
     }
-    return render(request, 'index.html', context=ctx)
+    return render(request, 'index.html', context=context)
 
 def about(request):
     user = UserMeta.objects.get(id=1)
-    ctx = {
+    context = {
         "current_user": user,
         "local": local
     }
-    return render(request, 'about.html', context=ctx)
+    return render(request, 'about.html', context=context)
 
 def archive(request):
-    ctx = {
+    context = {
         "count": len(Post.objects.all()),
         "code": Post.objects.filter(category__name="Code").order_by('-date', 'title'),
         "design": Post.objects.filter(category__name="Design").order_by('-date', 'title'),
@@ -41,7 +41,20 @@ def archive(request):
         "local": local,
     }
 
-    return render(request, 'archive.html', context=ctx)
+    return render(request, 'archive.html', context=context)
+
+def landing(request, category):
+    if not category or category != 'photo':
+        return redirect("/")
+
+    requested_category = Post.objects.filter(category__name="Photo").order_by('-date', 'title') # fixme: bad db design with capitalized letters
+
+    context = {
+        'category': requested_category,
+        'local': local
+    }
+
+    return render(request, 'landing/' + category + '.html', context=context)
 
 def post(request, post_slug):
     if not post_slug:

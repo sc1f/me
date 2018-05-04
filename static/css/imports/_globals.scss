@@ -36,10 +36,18 @@ body {
   }
 }
 
+// custom sidebar styling
+.sidebar {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-right: 0;
+}
+
 .footer {
   padding: 3.75% 2em;
   .footer-text {
-    font-size: 1rem;
+    font-style: italic;
+    font-size: .8rem;
   }
 }
 
@@ -139,7 +147,9 @@ ul, ol {
   height: 100%;
   text-decoration: none;
   width: auto !important;
-  
+}
+
+a.logo {
   &:hover {
     background: #000000;
     color: $theme-yellow;
@@ -201,4 +211,10 @@ ul, ol {
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important;
+}
+
+// images
+img.image {
+  height: auto;
+  width: 100%;
 }

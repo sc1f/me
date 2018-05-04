@@ -1,0 +1,31 @@
+{% extends 'landing/landing.html' %}
+
+{% block title %}jun tan photography{% endblock %}
+{% block meta %}
+    <meta property="og:title" content="jun tan photography"/>
+    <meta name="twitter:title" content="jun tan photography">
+{% endblock %}
+
+{% block sidebar %}
+    <div class="column small-12 flex-container flex-dir-column sidebar">
+    <p>Photography</p>
+    <li>
+        {% for post in category %}
+            <ul class="related__post">
+                <li>
+                    <a class="body" href="/posts/{{ post.slug }}">{{ post.title }}</a>
+                </li>
+            </ul>
+        {% endfor %}
+    </li>
+    </div>
+{% endblock %}
+
+{% block landing_content %}
+    <div class="columns large-12 medium-12 small-12">
+        <p>Lorem ipsum dolor sit amet.</p>
+        <div class="columns large-12 medium-12 small-12 image--container">
+            <img class="image" src="https://juntan-portfolio.s3.amazonaws.com/photo/txou/20171014-DSCF7399.jpg" alt="abc">
+        </div>
+    </div>
+{% endblock %}

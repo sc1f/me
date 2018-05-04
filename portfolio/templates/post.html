@@ -5,7 +5,6 @@
 {% block title %}{{ post.title | lower }} | jun tan{% endblock %}
 {% block meta %}
     <!-- fb og -->
-
     <meta property="og:url"
           content="https://juntan.me/{{ request.get_full_path }}"/>
     <meta property="og:title" content="{{ post.title | lower }} | jun tan"/>
@@ -20,10 +19,11 @@
 {% block content %}
     <div class="container">
         <div class="row row__post flex-container align-spaced">
+            <!-- Sidebar -->
             <div class="large-2 medium-2 small-12 logo--container">
                 <a href="/" class="logo highlighted">jun tan</a>
             </div>
-            <!-- Header -->
+            <!-- Content -->
             <div class="columns large-8 medium-8 small-12 flex-container align-start flex-dir-column container container--align-left">
                 <div class="post--meta">
                     {% if user.is_superuser %}
@@ -54,6 +54,7 @@
                     {% endif %}
                 </div>
             </div>
+            <!-- Spacer -->
             <div class="columns large-2 medium-2 small-12 flex-container align-end flex-dir-column container container--align-right">
             </div>
         </div>

@@ -21,10 +21,16 @@ body {
     .row__archive .columns.large-12 {
       margin-bottom: 6.5em; } }
 
+.sidebar {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  padding-right: 0; }
+
 .footer {
   padding: 3.75% 2em; }
   .footer .footer-text {
-    font-size: 1rem; }
+    font-style: italic;
+    font-size: .8rem; }
 
 @media screen and (max-width: 640px) {
   div.columns {
@@ -84,9 +90,10 @@ ul, ol {
   height: 100%;
   text-decoration: none;
   width: auto !important; }
-  .logo:hover {
-    background: #000000;
-    color: #FFEC00; }
+
+a.logo:hover {
+  background: #000000;
+  color: #FFEC00; }
 
 .body {
   font-weight: 400 !important; }
@@ -131,6 +138,10 @@ ul, ol {
 
 [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
   display: none !important; }
+
+img.image {
+  height: auto;
+  width: 100%; }
 
 .button {
   background: #fff;
@@ -281,5 +292,9 @@ ul, ol {
 
 .related__post {
   margin-bottom: 0; }
+
+div.image--container {
+  padding-left: 0;
+  padding-right: 0; }
 
 /*# sourceMappingURL=../../../../../../../static/css/main.css.map */
