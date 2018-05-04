@@ -5,17 +5,15 @@
 {% block title %}{{ post.title | lower }} | jun tan{% endblock %}
 {% block meta %}
     <!-- fb og -->
+
     <meta property="og:url"
-          content="https://juntan.me"/>
+          content="https://juntan.me/{{ request.get_full_path }}"/>
     <meta property="og:title" content="{{ post.title | lower }} | jun tan"/>
-    <meta property="og:description" content="coder, designer, photographer"/>
     <meta property="og:image"
           content="https://s3.amazonaws.com/juntan-portfolio/{{ post.thumbnail }}"/>
     <!-- twitter cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@jtan____">
     <meta name="twitter:title" content="{{ post.title | lower }} | jun tan">
-    <meta name="twitter:description" content="coder, designer, photographer">
     <meta name="twitter:image" content="https://s3.amazonaws.com/juntan-portfolio/{{ post.thumbnail }}' %}">
 {% endblock %}
 
