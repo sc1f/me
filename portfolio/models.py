@@ -5,8 +5,8 @@ from ckeditor.fields import RichTextField
 # Create your models here.
 class UserMeta(models.Model):
     name = models.CharField(max_length=300, unique=True)
-    about = models.TextField()
-    about_site = models.TextField(verbose_name="About Site")
+    about = RichTextField()
+    for_hire = RichTextField()
     image = models.ImageField(null=True)
     resume = models.FileField(null=True)
     email = models.EmailField()
@@ -40,7 +40,7 @@ class Post(models.Model):
     date_created = models.DateField(auto_now_add=True)
     date = models.DateField(null=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    thumbnail = models.ImageField(null=True)
+    thumbnail = models.ImageField(blank=True, null=True)
     external_link = models.URLField(blank=True)
     content = RichTextField()
 

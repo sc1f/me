@@ -1,174 +1,35 @@
-// Styles applied across the site
-
-html, body {
-  overflow-x: hidden;
-}
-
-body {
+// Global styling across site
+html {
   background: #fff;
-  padding-top: 3.75%;
-}
+  overflow-x: hidden;
+  padding: 2em 10%; // default padding to bring everything in-line with design
 
-// block-level elements
-
-// rows form the crux of the layout - these override default row styles
-.row {
-  padding-top: 3.75%;
-
-  @include media-query(medium) {
-    padding-top: 5%;
+  @include media-query(md) {
+    padding: 1rem;
   }
 }
 
-.row__about {
-  @include media-query(medium) {
-    flex-direction: column-reverse;
-  }
+// make headings bold
+h1, h3 {
+  font-weight: bold;
 }
 
-.row__archive {
-  @include media-query(medium) {
-    flex-direction: column;
-
-    .columns.large-12 {
-      margin-bottom: 6.5em;
-    }
-  }
-}
-
-.footer {
-  padding: 3.75% 2em;
-  .footer-text {
-    font-size: .8rem;
-    font-style: italic;
-  }
-}
-
-div.columns {
-  @include media-query(medium) {
-    padding: 0 2em;
-  }
-}
-
-// containers
-.container--align-left {
-  align-items: flex-start;
-
-  @include media-query(medium) {
-
-  }
-
-  &.container--text {
-    * {
-      font-weight: $font-weight-bold;
-    }
-
-    &.container--text__about {
-      font-weight: $font-weight-normal !important;
-    }
-  }
-
-}
-
-.container--align-right {
-  align-items: flex-end;
-  text-align: right;
-
-  &.container--text {
-    * {
-      font-weight: $font-weight-normal;
-    }
-  }
-}
-
-.container__list {
-  margin-top: auto;
-}
-
-// typography
-h3 {
-  font-weight: $font-weight-bold;
-  @include media-query(large) {
-    font-size: 1.5rem;
-  }
-}
+// override link color styling
 a {
-  color: $link-color;
+  font-family: $mono-font-family;
   text-decoration: underline;
-
   &:hover {
-    color: $theme-yellow;
+    color: $secondary-color;
   }
 }
 
-// edit ul/ol line height
-ul, ol {
-  line-height: 2.5;
-}
-
-.heading {
-  font-weight: $font-weight-bold;
-
-  &.heading--name {
-    margin-bottom: 3rem;
-
-    &.heading--name__about {
-      margin-bottom: .75em;
-    }
-
-    @include media-query(medium) {
-      font-size: 2.5em;
-      margin-bottom: 1em;
-    }
-  }
-
-  &.heading--homepage {
-    @include media-query(medium) {
-      align-self: flex-start;
-      font-size: 2.5em;
-      text-align: left;
-    }
-  }
-}
-
-.logo--container {
-  @include media-query(medium) {
-    margin-bottom: 2em;
-  }
-}
-
-.logo {
-  color: #000;
-  font-size: 1.5rem;
-  height: 100%;
-  text-decoration: none;
-  width: auto !important;
-  
-  &:hover {
-    background: #000000;
-    color: $theme-yellow;
-  }
-}
-
-.body {
-  font-weight: $font-weight-normal !important;
-  &.body--large {
-    font-size: 1.25rem;
-    @include media-query(medium){
-      font-size: 1rem;
-    }
-  }
-  &.body--xlarge {
-    font-size: 2rem;
-  }
-
-  &.body__italic {
-    font-style: italic;
-  }
+// footer
+.footer {
+  margin-top: 3em;
+  text-align: center;
 }
 
 // lazy load images
-
 .lazy {
   -webkit-transition: opacity 500ms ease-in-out;
   -moz-transition: opacity 500ms ease-in-out;
@@ -182,27 +43,25 @@ ul, ol {
   opacity: 1;
 }
 
+.lazy.lazy-error {
+  background: $gray-color;
+}
+
 // highlighted elements
-.highlighted {
-  background-color: $theme-yellow;
+.highlight {
+  background-color: $primary-color;
   color: #000;
-  padding: .25rem;
   width: 100%;
 }
 
 // edit selection color
 ::selection {
-  background: $theme-yellow; /* WebKit/Blink Browsers */
+  background: $primary-color; /* WebKit/Blink Browsers */
   color: #000;
   opacity: 1;
 }
 ::-moz-selection {
-  background: $theme-yellow; /* Gecko Browsers */
+  background: $primary-color; /* Gecko Browsers */
   color: #000;
   opacity: 1;
-}
-
-
-[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
-  display: none !important;
 }

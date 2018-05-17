@@ -2,59 +2,74 @@
 
 {% load staticfiles %}
 
-{% block title %}{{ post.title | lower }} | jun tan{% endblock %}
+{% block title %}{{ post.title | lower }} | Jun Tan{% endblock %}
 {% block meta %}
     <!-- fb og -->
 
     <meta property="og:url"
           content="https://juntan.me/{{ request.get_full_path }}"/>
-    <meta property="og:title" content="{{ post.title | lower }} | jun tan"/>
+    <meta property="og:title" content="{{ post.title }} | jun tan"/>
     <meta property="og:image"
           content="https://s3.amazonaws.com/juntan-portfolio/{{ post.thumbnail }}"/>
     <!-- twitter cards -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ post.title | lower }} | jun tan">
+    <meta name="twitter:title" content="{{ post.title }} | jun tan">
     <meta name="twitter:image" content="https://s3.amazonaws.com/juntan-portfolio/{{ post.thumbnail }}' %}">
 {% endblock %}
 
 {% block content %}
     <div class="container">
-        <div class="row row__post flex-container align-spaced">
-            <div class="large-2 medium-2 small-12 logo--container">
-                <a href="/" class="logo highlighted">jun tan</a>
+        <div class="columns">
+            <div class="column col-2 col-sm-6 col-mr-auto">
+                <span class="name highlight">Jun Tan</span>
             </div>
-            <!-- Header -->
-            <div class="columns large-8 medium-8 small-12 flex-container align-start flex-dir-column container container--align-left">
-                <div class="post--meta">
-                    {% if user.is_superuser %}
-                        <a href="/admin/portfolio/post/{{ post.id }}" class="button button__home">Edit</a>
-                    {% endif %}
-                    <h1 class="heading">{{ post.title | lower }}</h1>
-                    {% if post.date %}
-                        <p class="body body__italic">{{ post.date | date:"F o" }}</p>
-                    {% endif %}
-                </div>
-                <div class="post--container">
-                    {% autoescape off %}
-                        {{ post.content }}
-                    {% endautoescape %}
-                </div>
-                <h5 class="related__header">related works</h5>
+            <div class="home__container column col-2 col-sm-6">
+                <a href="/">Home</a>
+                {% if user.is_superuser %}
+                    <a href="/admin/portfolio/post/{{ post.id }}" class="btn btn-primary">Edit</a>
+                {% endif %}
+            </div>
+        </div>
+        <div class="columns">
+            <div class="headline column col-8 col-sm-12 col-mx-auto">
+                <h1 class="post__headline">{{ post.title }}</h1>
+                {% if post.date %}
+                    <span class="post__date">{{ post.date | date:"F o" }}</span>
+                {% endif %}
+            </div>
+        </div>
+        <div class="columns">
+            <div class="post column col-12 col-mx-auto">
+                {% autoescape off %}
+                    {{ post.content }}
+                {% endautoescape %}
+            </div>
+        </div>
+        <div class="after-post columns">
+            <div class="related column col-6 col-sm-12 col-ml-auto">
+                <h3>Related Works</h3>
                 <div class="related">
                     {% if not related_posts %}
-                        <p>coming soon...</p>
+                        <p>Coming soon...</p>
                     {% else %}
                         {% for post in related_posts %}
-                        <ul class="related__post">
-                            <li>
-                                <a class="body" href="/posts/{{ post.slug }}">{{ post.title }}</a>
-                            </li>
-                        </ul>
+                            <ul class="related__post">
+                                <li>
+                                    <a class="body" href="/posts/{{ post.slug }}">{{ post.title }}</a>
+                                </li>
+                            </ul>
                         {% endfor %}
                     {% endif %}
                 </div>
             </div>
-            <div class="columns large-2 medium-2 small-12 flex-container align-end flex-dir-column container container--align-right">
+            <div class="contact col-3 col-sm-12 col-mr-auto">
+                <h3>Contact</h3>
+                <div class="columns">
+                    <a href="mailto:{{ current_user.email }}" class="column col-3 col-sm-12">Email</a>
+                    <a href="https://instagram.com/{{ current_user.instagram }}" class="column col-12">Instagram</a>
+                    <a href="https://twitter.com/{{ current_user.twitter }}" class="column col-12">Twitter</a>
+                    <a href="{{ current_user.linkedin }}" class="column col-3 col-sm-12">LinkedIn</a>
+                </div>
             </div>
         </div>
     </div>

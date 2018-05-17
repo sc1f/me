@@ -1,42 +1,53 @@
-.row__post {
-  @include media-query(medium){
-    flex-direction: row-reverse;
-    .container--align-right {
-      margin-bottom: 2rem;
-    }
+// Post-specific styles
+span.name {
+  font-family: $heading-font-family;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
 
+.home__container {
+  align-items: center;
+  display: flex;
+  justify-content: flex-end;
+
+  a {
+    margin-left: 1em;
   }
 }
 
-.post--meta {
-  border-bottom: 4px solid #000;
-  margin-bottom: 2rem;
-  width: 100%;
-}
+.headline {
+  padding: 3em 0;
+  text-align: center;
+  
+  @include media-query(sm) {
+    padding: 2em 0;
+    text-align: left;
+  }
 
-.post--container {
-  width: 100%;
-  * {
-    img {
-      border: 4px solid #000;
-      height: auto !important;
-      margin: .75rem 0;
-    }
+  h1.post__headline {
+    font-weight: bold;
+    margin-bottom: 0;
   }
 }
 
-.related {
-  margin-right: auto;
-  @include media-query(medium) {
-    //flex-direction: column;
+.post__date {
+  font-family: $mono-font-family;
+  text-align: left;
+}
+
+p > img {
+  display: block;
+  height: auto !important;
+  width: 100% !important;
+}
+
+.after-post {
+  padding-top: 3em;
+}
+
+.related, .contact {
+  h3 {
+    font-weight: bold;
   }
 }
 
-.related__header {
-  margin-right: auto;
-  width: 100%;
-}
-
-.related__post {
-  margin-bottom: 0;
-}
