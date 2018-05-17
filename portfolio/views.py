@@ -19,25 +19,18 @@ def handler500(request):
 def homepage(request):
     ctx = {
         "current_user": UserMeta.objects.get(id=1),
-        "items": Post.objects.all().order_by('-date', 'title')[:12],
-        "local": local
+        # 5/13 added blog category
+        "digital": Post.objects.filter(category__name__in=["Code", "Design"]).order_by('-date', 'title')[:6],
+        "analog": Post.objects.filter(category__name__in=["Photo", "Writing"]).order_by('-date', 'title')[:6],
+        "local": local,
     }
     return render(request, 'index.html', context=ctx)
-
-def about(request):
-    user = UserMeta.objects.get(id=1)
-    ctx = {
-        "current_user": user,
-        "local": local
-    }
-    return render(request, 'about.html', context=ctx)
 
 def archive(request):
     ctx = {
         "count": len(Post.objects.all()),
-        "code": Post.objects.filter(category__name="Code").order_by('-date', 'title'),
-        "design": Post.objects.filter(category__name="Design").order_by('-date', 'title'),
-        "photo": Post.objects.filter(category__name="Photo").order_by('-date', 'title'),
+        "digital": Post.objects.filter(category__name__in=["Code", "Design"]).order_by('-date', 'title'),
+        "analog": Post.objects.filter(category__name__in=["Photo", "Writing"]).order_by('-date', 'title'),
         "local": local,
     }
 
@@ -55,6 +48,7 @@ def post(request, post_slug):
     related_posts = Post.objects.filter(category__name=requested_post.category.name).exclude(slug=post_slug).order_by('-date', 'title')[:3]
 
     context = {
+        "current_user": UserMeta.objects.get(id=1),
         "post": requested_post,
         "related_posts": related_posts,
         "local": local

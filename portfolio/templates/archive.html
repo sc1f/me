@@ -2,71 +2,54 @@
 
 {% load staticfiles %}
 
-{% block title %}archive | jun tan{% endblock %}
+{% block title %}Archive | Jun Tan{% endblock %}
 
 {% block content %}
     <div class="container">
-        <div class="row flex-container align-spaced">
-            <div class="large-2 medium-2 small-12 logo--container">
-                <a href="/" class="logo highlighted">jun tan</a>
+        <div class="columns">
+            <div class="column col-2 col-sm-6 col-mr-auto">
+                <span class="name highlight">Jun Tan</span>
             </div>
-            <!-- Header -->
-            <div class="columns large-10 medium-10 small-12 flex-container align-start flex-dir-column container container--text container--align-left">
+            <div class="home__container column col-2 col-sm-6">
+                <a href="/">Home</a>
             </div>
         </div>
-        <div class="row flex-container row__archive">
-            <div class="columns large-12">
-                <h4>code</h4>
-                <div class="flex-container align-start align-top container container--portfolio container--portfolio__archive">
-                    {% if not code %}
-                        <p class="body body--large">nothing to see here.</p>
-                    {% else %}
-                        {% for item in code %}
-                            <!-- reduce unneeded logic: post endpoint already handles external links -->
-                            <a href="{% if item.external_link %} {{ item.external_link }} {% else %} /posts/{{ item.slug }} {% endif %}"
-                                    {% if item.external_link %} target="_blank" rel="noopener noreferrer" {% endif %}
-                               class="columns large-4 medium-6 small-12 container--item"
-                               style="background-image:url(https://s3.amazonaws.com/juntan-portfolio/{{ item.thumbnail }})">
-                                <!-- FIXME this is gonna break -->
-                            </a>
-                        {% endfor %}
-                    {% endif %}
+        <div class="columns">
+            <div class="archive column col-12">
+                <h1>Archive</h1>
+                <h3>Digital</h3>
+                <div class="category__row columns" id="digital">
+                    {% for item in digital %}
+                        <a {% if item.external_link %}
+                            href="{{ item.external_link }}"
+                            target="_blank"
+                            rel="nofollow noopener"
+                        {% else %}
+                            href="/posts/{{ item.slug }}"
+                        {% endif %} class="category__item column col-4 col-sm-12">
+                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" class="category__image lazy" data-src="https://s3.amazonaws.com/juntan-portfolio/{{ item.thumbnail }}">
+                            <p class="category__title">{{ item.title }}</p>
+                        </a>
+                    {% endfor %}
                 </div>
-            </div>
-            <div class="columns large-12">
-                <h4>design</h4>
-                <div class="flex-container align-start align-top container container--portfolio container--portfolio__archive">
-                    {% if not design %}
-                        <p class="body body--large">nothing to see here.</p>
-                    {% else %}
-                        {% for item in design %}
-                            <a href="{% if item.external_link %} {{ item.external_link }} {% else %} /posts/{{ item.slug }} {% endif %}"
-                                    {% if item.external_link %} target="_blank" rel="noopener noreferrer" {% endif %}
-                               class="columns large-4 medium-6 small-12 container--item"
-                               style="background-image:url(https://s3.amazonaws.com/juntan-portfolio/{{ item.thumbnail }})">
-                                <!-- FIXME this is gonna break -->
-                            </a>
-                        {% endfor %}
-                    {% endif %}
-                </div>
-            </div>
-            <div class="columns large-12">
-                <h4>photo</h4>
-                <div class="flex-container align-start align-top container container--portfolio container--portfolio__archive">
-                    {% if not photo %}
-                        <p class="body body--large">nothing to see here.</p>
-                    {% else %}
-                        {% for item in photo %}
-                            <a href="{% if item.external_link %} {{ item.external_link }} {% else %} /posts/{{ item.slug }} {% endif %}"
-                                    {% if item.external_link %} target="_blank" rel="noopener noreferrer" {% endif %}
-                               class="columns large-4 medium-6 small-12 container--item"
-                               style="background-image:url(https://s3.amazonaws.com/juntan-portfolio/{{ item.thumbnail }})">
-                                <!-- FIXME this is gonna break -->
-                            </a>
-                        {% endfor %}
-                    {% endif %}
+                <h3>Analog</h3>
+                <div class="category__row columns" id="analog">
+                    {% for item in analog %}
+                        <a {% if item.external_link %}
+                            href="{{ item.external_link }}"
+                            target="_blank"
+                            rel="nofollow noopener"
+                        {% else %}
+                            href="/posts/{{ item.slug }}"
+                        {% endif %} class="category__item column col-4 col-sm-12">
+                            <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" class="category__image lazy" data-src="https://s3.amazonaws.com/juntan-portfolio/{{ item.thumbnail }}">
+                            <p class="category__title">{{ item.title }}</p>
+                        </a>
+                    {% endfor %}
                 </div>
             </div>
         </div>
     </div>
+    <script src="{% static 'js/bundle.min.js' %}"></script>
+    <script src="{% static 'js/app.js' %}"></script>
 {% endblock %}

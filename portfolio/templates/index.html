@@ -1,148 +1,114 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 
-{% block title %}jun tan{% endblock %}
+{% block title %}Jun Tan{% endblock %}
 {% block meta %}
     <meta property="og:url"
           content="https://juntan.me"/>
-    <meta property="og:title" content="jun tan"/>
+    <meta property="og:title" content="Jun Tan"/>
     <meta property="og:image"
           content="https://s3.amazonaws.com/juntan-portfolio/homepage-meta.png"/>
-    <meta name="twitter:title" content="jun tan">
+    <meta name="twitter:title" content="Jun Tan">
     <meta name="twitter:image" content="https://s3.amazonaws.com/juntan-portfolio/homepage-meta.png">
 {% endblock %}
 
 {% block content %}
+    <!-- splash -->
     <div class="container">
-        <div class="row flex-container align-spaced">
-            <!-- Header -->
-            <div class="columns large-6 medium-6 small-12 flex-container align-start flex-dir-column container container--text container--align-left">
-                <h1 class="heading heading--name">jun tan</h1>
-                <div class="flex-container flex-dir-column align-self-end align-spaced container container__list">
-                    <h3>full-stack engineer</h3>
-                    <h3>designer</h3>
-                    <h3>photographer</h3>
-                </div>
-            </div>
-            <div class="columns large-6 medium-6 small-12 flex-container align-end flex-dir-column container container--text container--align-right">
-                <div class="flex-container flex-dir-column align-self-end align-spaced container container__list">
-                    <h3>student</h3>
-                    <h3>plan ii, government, computer science</h3>
-                    <h3>ut austin</h3>
-                </div>
+        <div class="columns">
+            <div class="navigation column col-4 col-ml-auto">
+                {% if current_user.resume %}
+                    <a href="https://s3.amazonaws.com/juntan-portfolio/{{ current_user.resume }}" target="_blank" rel="noopener noreferrer"
+                       class="navigation__link">Resumé</a>
+                {% endif %}
+                <a href="#contact" class="navigation__link">Contact</a>
             </div>
         </div>
-        <div class="row row__navigation">
-            <!-- Navigation -->
-            <div class="columns large-4 medium-4 small-12 flex-container flex-dir-column align-right align-center container container--align-left">
-                <a href="#work" class="button button--large button__primary">work</a>
-                <a href="/about" class="button button--large">about</a>
-            </div>
-            <div class="columns large-4 medium-4 small-12 flex-container flex-dir-column align-center-middle container">
-                <div class="portrait" style="background-image: url('https://s3.amazonaws.com/juntan-portfolio/{{ current_user.image }}') !important"></div>
-            </div>
-            <div class="columns large-4 medium-4 small-12 flex-container flex-dir-column align-left align-center container container--align-right">
-                <a href="mailto:{{ current_user.email }}" class="button button--large">email</a>
-                <a href="https://github.com/{{ current_user.github }}" target="_blank" rel="noopener noreferrer"
-                   class="button button--large">github</a>
+        <div class="columns">
+            <div class="introduction column col-4 col-sm-10 col-mx-auto">
+                <h2 class="introduction__name">Jun Tan</h2>
+                <h2 class="introduction__text">is a <span class="highlight">software engineer</span>, visual designer, & documentary photographer based in Austin, Texas.</h2>
+                <p class="introduction__projects">Recent projects include:</p>
+                <div class="introduction__icon">
+                    <i class="icon icon-arrow-down"></i>
+                </div>
             </div>
         </div>
     </div>
-    <div class="container container__description">
-        <div class="row row__description">
-            <div class="columns large-12 medium-12 small-12">
-                <h3 class="heading heading--homepage">I'm looking to...</h3>
-                <ul>
-                    <li class="body body--large"><span class="highlighted">work at the intersection of design and government</span></li>
-                    <li class="body body--large">develop my technical skills</li>
-                    <li class="body body--large">learn and expand my vision</li>
-                </ul>
+    <!-- digital -->
+    <div class="container">
+        <div class="columns">
+            <div class="category__header column col-4 col-sm-12">
+                <h3>Digital</h3>
+                <p>(Software & Design)</p>
+            </div>
+            <div class="category__link column col-4 col-sm-12 col-ml-auto">
+                <a href="/archive#digital">See Everything</a>
             </div>
         </div>
-    </div>
-    <div class="container" id="work" ng-app="portfolioApp">
-        <div class="row row__portfolio">
-            <div class="columns large-12 medium-12 small-12">
-                <div class="flex-container align-spaced align-middle header--work">
-                    <h3 class="heading heading--homepage">I've recently done...</h3>
-                    <div class="flex-container align-self-end align-end container container--work__buttons container--align-right">
-                        <a href="/posts" class="button button__archive">see everything</a>
-                    </div>
-                </div>
-                <div class="flex-container align-start align-top container container--portfolio">
-                    {% if not items %}
-                        <p class="body body--large">nothing to see here.</p>
+        <div class="category__row columns">
+            {% for item in digital %}
+            <a {% if item.external_link %}
+                    href="{{ item.external_link }}"
+                    target="_blank"
+                    rel="nofollow noopener"
                     {% else %}
-                        {% for item in items %}
-                            <a href="{% if item.external_link %} {{ item.external_link }} {% else %} /posts/{{ item.slug }} {% endif %}"
-                                    {% if item.external_link %} target="_blank" rel="noopener noreferrer" {% endif %}
-                               class="columns large-4 medium-6 small-12 container--item lazy"
-                               data-src="https://s3.amazonaws.com/juntan-portfolio/{{ item.thumbnail }}">
-                            </a>
-                        {% endfor %}
-                    {% endif %}
-                </div>
-            </div>
+                    href="/posts/{{ item.slug }}"
+                    {% endif %} class="category__item column col-4 col-sm-12">
+                <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" class="category__image lazy" data-src="https://s3.amazonaws.com/juntan-portfolio/{{ item.thumbnail }}">
+                <p class="category__title">{{ item.title }}</p>
+            </a>
+            {% endfor %}
         </div>
     </div>
+    <!-- analog -->
     <div class="container">
-        <div class="row row__skill">
-            <div class="columns large-12 medium-12 small-12">
-                <h3 class="heading heading--name">I'm good at...</h3>
+        <div class="columns">
+            <div class="category__header column col-4 col-sm-12">
+                <h3>Analog</h3>
+                <p>(Photography & Writing)</p>
             </div>
-            <div class="columns large-6 medium-6 small-12 flex-container align-start flex-dir-column container container--text container--align-left">
-                <h3><span class="highlighted">writing full-stack code</span></h3>
-            </div>
-            <div class="columns large-6 medium-6 small-12 flex-container align-end flex-dir-column container container--text container--align-right">
-                <div class="flex-container flex-dir-column align-self-end align-spaced container container__list">
-                    <h3>python, c#, php, javascript</h3>
-                    <p>building APIs,</p>
-                    <p>dynamic <a href="http://dailytexanonline.com/features/residencehallexplorer" target="_blank" rel="noopener noreferrer">web apps</a>,</p>
-                    <p>wordpress themes,</p>
-                    <p>and <a href="https://github.com/sc1f/simple-ms-bot-framework">chatbots</a></p>
-                </div>
+            <div class="category__link column col-4 col-sm-12 col-ml-auto">
+                <a href="/archive#analog">See Everything</a>
             </div>
         </div>
-        <div class="row row__skill">
-            <div class="columns large-6 medium-6 small-12 flex-container align-start flex-dir-column container container--text container--align-left">
-                <h3><span class="highlighted">creating beautiful designs</span></h3>
-            </div>
-            <div class="columns large-6 medium-6 small-12 flex-container align-end flex-dir-column container container--text container--align-right">
-                <div class="flex-container flex-dir-column align-self-end align-spaced container container__list">
-                    <h3>sketch, illustrator, indesign, photoshop</h3>
-                    <p>creating user interfaces,</p>
-                    <p>designing experiences,</p>
-                    <p>print layouts,</p>
-                    <p><a href="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2FTexasDemocraticParty%2Fvideos%2F10154333917199802%2F&show_text=0&width=560">video</a> and motion</p>
-                </div>
-            </div>
-        </div>
-        <div class="row row__skill">
-            <div class="columns large-6 medium-6 small-12 flex-container align-start flex-dir-column container container--text container--align-left">
-                <h3><span class="highlighted">shooting compelling photographs</span></h3>
-            </div>
-            <div class="columns large-6 medium-6 small-12 flex-container align-end flex-dir-column container container--text container--align-right">
-                <div class="flex-container flex-dir-column align-self-end align-spaced container container__list">
-                    <h3>photojournalism, street, travel</h3>
-                    <p><a href="http://studentpress.org/acp/awards/2016photo/" target="_blank" rel="noopener noreferrer">award-winning</a> photojournalist,</p>
-                    <p>I shoot <a href="https://www.flickr.com/photos/thedailytexan/sets/72157658905244075/show">protests</a>,</p>
-                    <p><a href="https://www.instagram.com/p/BXjUG3KFvsj/?taken-by=_juntan">places</a>,</p>
-                    <p>and the <a href="https://instagram.com/{{ current_user.instagram }}" target="_blank" rel="noopener noreferrer">mise-en-scène</a></p>
-                </div>
-            </div>
+        <div class="category__row columns">
+            {% for item in analog %}
+                <a {% if item.external_link %}
+                    href="{{ item.external_link }}"
+                    target="_blank"
+                    rel="nofollow noopener"
+                {% else %}
+                    href="/posts/{{ item.slug }}"
+                {% endif %} class="category__item column col-4 col-sm-12">
+                    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAMLCwgAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" class="category__image lazy" data-src="https://s3.amazonaws.com/juntan-portfolio/{{ item.thumbnail }}">
+                    <p class="category__title">{{ item.title }}</p>
+                </a>
+            {% endfor %}
         </div>
     </div>
+    <!-- about, hire, contact -->
     <div class="container">
-        <div class="row">
-            <div class="columns large-12 small-12 flex-container align-justify align-middle header--contact">
-                <h3 class="heading heading--homepage">I'm available at...</h3>
-                <div class="flex-container align-self-end align-justify container container--work__buttons container--contact__buttons container--align-right">
-                    <a href="mailto:{{ current_user.email }}" class="button">email</a>
-                    <a href="https://github.com/{{ current_user.github }}" target="_blank" rel="noopener noreferrer"
-                       class="button">github</a>
-                    <a href="https://instagram.com/{{ current_user.instagram }}" target="_blank"
-                       rel="noopener noreferrer"
-                       class="button">instagram</a>
+        <div class="columns">
+            <div class="about__header column col-4 col-sm-12" id="about">
+                <h3>About</h3>
+                {% autoescape off %}
+                <p>{{ current_user.about }}</p>
+                {% endautoescape %}
+            </div>
+            <div class="about__header column col-4 col-sm-12">
+                <h3>For Hire</h3>
+                {% autoescape off %}
+                <p>{{ current_user.for_hire }}</p>
+                {% endautoescape %}
+            </div>
+            <div class="about__header column col-4 col-sm-12" id="contact">
+                <h3>Contact</h3>
+                <div class="columns">
+                    <a href="mailto:{{ current_user.email }}" class="column col-3 col-sm-12">Email</a>
+                    <a href="https://instagram.com/{{ current_user.instagram }}" class="column col-12">Instagram</a>
+                    <a href="https://twitter.com/{{ current_user.twitter }}" class="column col-12">Twitter</a>
+                    <a href="{{ current_user.linkedin }}" class="column col-3 col-sm-12">LinkedIn</a>
                 </div>
             </div>
         </div>

@@ -1,0 +1,103 @@
+// Homepage-specific styles
+.container {
+  margin-bottom: 3em;
+
+  @include media-query(sm) {
+    margin-bottom: .5em;
+  }
+}
+
+.navigation {
+  text-align: right;
+  .navigation__link {
+    margin-left: 1em;
+
+    @include media-query(md) {
+      margin-left: 0;
+      margin-bottom: 1em;
+    }
+  }
+}
+
+.introduction {
+  padding: 5em 0;
+
+  @include media-query(md) {
+    padding: 3em 0;
+  }
+}
+.introduction__name {
+  font-weight: bold;
+}
+
+.introduction__projects {
+  font-size: 1.1rem;
+  margin: 4rem 0 .5rem 0;
+  text-align: center;
+}
+
+.introduction__icon {
+  text-align: center;
+}
+
+// category
+
+.category__header {
+  h3 {
+    font-weight: bold;
+    margin-bottom: 0;
+  }
+  p {
+    margin-top: 0;
+  }
+}
+
+.category__link {
+  text-align: right;
+}
+
+.category__row {
+  margin-bottom: 2em;
+}
+
+.category__item {
+  height: 250px;
+  margin-bottom: 3.5em;
+
+  &:last-of-type {
+    margin-right: 0;
+  }
+
+  @include media-query(sm) {
+
+    &:first-of-type {
+      margin-top: 2em;
+    }
+
+    &:nth-of-type(1n+4) {
+      display: none;
+    }
+  }
+}
+
+.category__image {
+  border: 1px solid #000;
+  background: $gray-color;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.about__header {
+  padding-right: 3em;
+
+  @include media-query(sm) {
+    padding-right: 0;
+  }
+
+  h3 {
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,23 @@
+/* Contains overrides for Spectre variables - need to be shadowed in main.scss so we can use them in custom css
+ * Jun Tan, 2018
+ */
+
+// colors
+$primary-color: #F8E71C;
+$secondary-color: #5CADDC;
+$body-font-color: #000;
+$link-color: #000;
+
+// fonts
+$base-font-family: "Crimson Text", Georgia, "Times New Roman", serif;
+$mono-font-family: "Fira Mono", "SF Mono", "Segoe UI Mono", "Roboto Mono", Menlo, Courier, monospace;
+// applies to h1 through h6
+$heading-font-family: "Work Sans", -apple-system, -system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+// override heading font-family styles
+h1, h2, h3, h4, h5, h6 {
+  font-family: $heading-font-family;
+}
+
+// import spectre itself
+@import "spectre/spectre";
