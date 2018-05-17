@@ -17,6 +17,7 @@ class Migration(migrations.Migration):
             name='about_site',
         ),
         migrations.AddField(
+            # add for hire
             model_name='usermeta',
             name='for_hire',
             field=models.TextField(default='For Hire'),
