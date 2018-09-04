@@ -39,8 +39,11 @@ DATABASES = {
 
 if local:
     ALLOWED_HOSTS = ["0.0.0.0", "localhost"]
+    SECURE_SSL_REDIRECT = False
 else:
     ALLOWED_HOSTS = ['juntan.me', 'www.juntan.me', 'juntan-portfolio.herokuapp.com']
+    # force HTTPS
+    SECURE_SSL_REDIRECT = True
 
 # Application definition
 

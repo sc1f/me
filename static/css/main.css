@@ -13,6 +13,7 @@ h1, h3 {
   font-weight: bold; }
 
 a {
+  font-size: 14px;
   font-family: "Fira Mono", "SF Mono", "Segoe UI Mono", "Roboto Mono", Menlo, Courier, monospace;
   text-decoration: underline; }
   a:hover {
@@ -75,7 +76,9 @@ a {
       padding: 3em 0; } }
 
 .introduction__name {
-  font-weight: bold; }
+  font-size: 2.5em;
+  font-weight: bold;
+  margin-bottom: 0; }
 
 .introduction__projects {
   font-size: 1.1rem;

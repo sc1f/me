@@ -16,6 +16,7 @@ h1, h3 {
 
 // override link color styling
 a {
+  font-size: 14px;
   font-family: $mono-font-family;
   text-decoration: underline;
   &:hover {
